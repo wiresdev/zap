@@ -1,16 +1,22 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
-const CatApp = () => {
+export default function App() {
+  console.log("App executed2")
+
+
   return (
-    <View>
-      <Image
-        source={{uri: "https://reactnative.dev/docs/assets/p_cat1.png"}}
-        style={{width: 200, height: 200}}
-      />
-      <Text>Hello, I am your dog!</Text>
+    <View style={styles.container}>
+      <Text>Hello React Native</Text>
     </View>
   );
 }
 
-export default CatApp;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
