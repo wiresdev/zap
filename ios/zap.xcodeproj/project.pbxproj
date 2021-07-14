@@ -13,6 +13,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6F0F900093D1EAD60E1A780B /* libPods-zap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5EE9718BAF3585DB018DC7 /* libPods-zap.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D953A8B6269F888300382F9C /* app1.png in Resources */ = {isa = PBXBuildFile; fileRef = D953A8B5269F888300382F9C /* app1.png */; };
+		D953A8B7269F888300382F9C /* app1.png in Resources */ = {isa = PBXBuildFile; fileRef = D953A8B5269F888300382F9C /* app1.png */; };
+		D953A8B9269F8C0E00382F9C /* app-icon-new.png in Resources */ = {isa = PBXBuildFile; fileRef = D953A8B8269F8C0E00382F9C /* app-icon-new.png */; };
+		D953A8BA269F8C0E00382F9C /* app-icon-new.png in Resources */ = {isa = PBXBuildFile; fileRef = D953A8B8269F8C0E00382F9C /* app-icon-new.png */; };
 		F9B93DA1BEDFF2D7068F7B5D /* libPods-zap-zapTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B9FCFE8B1F22AFD4896324 /* libPods-zap-zapTests.a */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +35,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* zapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zapTests.m; sourceTree = "<group>"; };
 		0AF27038A1A7BD3027D5934A /* Pods-zap-zapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zap-zapTests.release.xcconfig"; path = "Target Support Files/Pods-zap-zapTests/Pods-zap-zapTests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* zap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Zap Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zap Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = zap/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = zap/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = zap/Images.xcassets; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		54E11F7A903B9EC57F64E31B /* Pods-zap-zapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zap-zapTests.debug.xcconfig"; path = "Target Support Files/Pods-zap-zapTests/Pods-zap-zapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = zap/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B9FCFE8B1F22AFD4896324 /* libPods-zap-zapTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zap-zapTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D953A8B5269F888300382F9C /* app1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app1.png; sourceTree = "<group>"; };
+		D953A8B8269F8C0E00382F9C /* app-icon-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-new.png"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F9AABF4FC488A71573D7BB92 /* Pods-zap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zap.debug.xcconfig"; path = "Target Support Files/Pods-zap/Pods-zap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				D953A8B8269F8C0E00382F9C /* app-icon-new.png */,
+				D953A8B5269F888300382F9C /* app1.png */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -114,7 +122,6 @@
 				54E11F7A903B9EC57F64E31B /* Pods-zap-zapTests.debug.xcconfig */,
 				0AF27038A1A7BD3027D5934A /* Pods-zap-zapTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,7 +150,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* zap.app */,
+				13B07F961A680F5B00A75B9A /* Zap Shopping.app */,
 				00E356EE1AD99517003FC87E /* zapTests.xctest */,
 			);
 			name = Products;
@@ -192,7 +199,7 @@
 			);
 			name = zap;
 			productName = zap;
-			productReference = 13B07F961A680F5B00A75B9A /* zap.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Zap Shopping.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +208,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -236,6 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D953A8B7269F888300382F9C /* app1.png in Resources */,
+				D953A8BA269F8C0E00382F9C /* app-icon-new.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D953A8B9269F8C0E00382F9C /* app-icon-new.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D953A8B6269F888300382F9C /* app1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,13 +442,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54E11F7A903B9EC57F64E31B /* Pods-zap-zapTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = BHDF93S4UW;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = zapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,10 +471,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AF27038A1A7BD3027D5934A /* Pods-zap-zapTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = BHDF93S4UW;
 				INFOPLIST_FILE = zapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BHDF93S4UW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = zap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,7 +513,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = zap;
+				PRODUCT_NAME = "Zap Shopping";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -511,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BHDF93S4UW;
 				INFOPLIST_FILE = zap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +539,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = zap;
+				PRODUCT_NAME = "Zap Shopping";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -577,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -589,6 +606,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Zap Shopping";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -635,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -646,6 +664,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "Zap Shopping";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
