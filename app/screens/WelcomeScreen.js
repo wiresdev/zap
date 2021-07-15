@@ -11,7 +11,7 @@ import {
 
 import colors from '../config/colors';
 
-function WelcomeScreen(props) {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
@@ -22,7 +22,10 @@ function WelcomeScreen(props) {
         </View>
 
         <View style={styles.buttonBg}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity 
+          style={styles.button}
+          onPress={() => navigation.navigate('Login')}
+          >
             <Text style={styles.buttonText}>Get Started</Text>
             <Image style={styles.arrow} source={require('../assets/right-arrow-white.png')}/>
           </TouchableOpacity>
@@ -30,7 +33,7 @@ function WelcomeScreen(props) {
       </SafeAreaView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {

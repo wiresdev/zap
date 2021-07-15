@@ -11,14 +11,13 @@ import {
 
 import colors from '../config/colors';
 
-function LoginScreen(props) {
+const LoginScreen = ({ navigation, route }) => {
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
         <View style={styles.body}>
           <Image style={styles.logo} source={require('../assets/logo-black.png')}/>
-          <Image style={styles.welcomeImage} source={require('../assets/welcome-image.jpg')}/>
-          <Image style={styles.welcomeDesc} source={require('../assets/welcome-desc.png')}/>
+          
         </View>
 
         <View style={styles.buttonBg}>
@@ -30,7 +29,7 @@ function LoginScreen(props) {
       </SafeAreaView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {
