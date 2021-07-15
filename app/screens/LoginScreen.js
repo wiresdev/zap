@@ -6,18 +6,32 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
+  TextInput,
   SafeAreaView
 } from 'react-native';
 
 import colors from '../config/colors';
 
 const LoginScreen = ({ navigation, route }) => {
+  const [text, onChangeText] = React.useState("(205) 555-0123");
+
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
         <View style={styles.body}>
-          <Image style={styles.logo} source={require('../assets/logo-black.png')}/>
-          
+          <Text style={styles.headingText}>Enter you mobile number</Text>
+          <View style={styles.buttonsContainer}>
+          <TouchableOpacity 
+              style={styles.countrySelector}
+            >
+              <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
+            </TouchableOpacity>
+            <TextInput
+              style={styles.phoneInput}
+              value={text}
+              placeholder="(205) 555-0123"
+            />
+          </View>
         </View>
 
         <View style={styles.buttonBg}>
@@ -47,26 +61,41 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 8,
+    justifyContent: 'center',
+    //backgroundColor: "#343434"
+  },
+
+  headingText: {
+    color: colors.foreground,
+    paddingLeft: 20,
+    paddingBottom: 12,
+    fontSize: 20,
+    fontFamily: "OpenSans-Regular",
+  },
+
+  countrySelector: {
+    flex: 3,
+    height: 60,
+    backgroundColor: colors.accentButton,
+    borderRadius: 9,
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: 20,
+    marginRight: 12
   },
 
-  logo: {
-    width: "100%",
-    height: 75,
-    resizeMode: "contain"
-  },
-
-  welcomeImage: {
-    width: 300,
-    height: 300,
-    marginTop: 20,
-    marginBottom: 40
-  },
-
-  welcomeDesc: {
-    width: 280,
-    height: 70,
+  phoneInput: {
+    flexDirection: "row",
+    flex: 6,
+    height: 60,
+    backgroundColor: colors.textInput,
+    borderRadius: 9,
+    borderWidth: 2,
+    alignItems: "flex-start",
+    marginRight: 20,
+    paddingLeft: 12,
+    fontSize: 18,
+    fontFamily: "OpenSans-Regular",
   },
 
   buttonBg: {
@@ -86,12 +115,12 @@ const styles = StyleSheet.create({
   backButton: {
     flex: 1,
     height: 60,
-    backgroundColor: colors.backButton,
+    backgroundColor: colors.accentButton,
     borderRadius: 9,
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 20,
-    marginRight: 16
+    marginRight: 12
   },
 
   button: {

@@ -3,5 +3,6 @@ export default {
   foreground: "#000000",
   button: "#000000",
   buttonText: "#ffffff",
-  backButton: "#d5d8db",
+  accentButton: "#d5d8db",
+  textInput: "#e4e7eb",
 };
