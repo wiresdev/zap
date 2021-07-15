@@ -44,8 +44,9 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 100,
-    height: 50,
+    width: "100%",
+    height: 75,
+    resizeMode: "contain"
   },
 
   welcomeImage: {
@@ -90,7 +91,6 @@ const styles = StyleSheet.create({
   arrow: {
     position: "absolute",
     right: 20,
-    color: '#ffffff',
     width: 24,
     height: 18
   }
