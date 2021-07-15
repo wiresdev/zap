@@ -21,10 +21,18 @@ const LoginScreen = ({ navigation, route }) => {
         </View>
 
         <View style={styles.buttonBg}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Get Started</Text>
-            <Image style={styles.arrow} source={require('../assets/right-arrow-white.png')}/>
-          </TouchableOpacity>
+          <View style={styles.buttonsContainer}>
+            <TouchableOpacity 
+              style={styles.backButton}
+              onPress={() => navigation.navigate('Welcome')}
+            >
+              <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Next</Text>
+              <Image style={styles.rightArrow} source={require('../assets/right-arrow-white.png')}/>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </View>
@@ -60,23 +68,41 @@ const styles = StyleSheet.create({
     width: 280,
     height: 70,
   },
-  
+
   buttonBg: {
     flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 20,
-    justifyContent: 'flex-end'
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignContent: "flex-end"
+  },
+  
+  buttonsContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+
+  },
+
+  backButton: {
+    flex: 1,
+    height: 60,
+    backgroundColor: colors.backButton,
+    borderRadius: 9,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 20,
+    marginRight: 16
   },
 
   button: {
     flexDirection: "row",
-    width: '100%',
+    flex: 3,
     height: 60,
     backgroundColor: colors.button,
     borderRadius: 9,
     alignItems: 'center',
     justifyContent: 'center',
+    marginRight: 20
   },
 
   buttonText: {
@@ -88,13 +114,17 @@ const styles = StyleSheet.create({
     //fontWeight: "600"
   },
 
-  arrow: {
+  rightArrow: {
     position: "absolute",
     right: 20,
     width: 24,
     height: 18
-  }
+  },
 
+  leftArrow: {
+    width: 24,
+    height: 18
+  }
 })
 
 export default LoginScreen;
