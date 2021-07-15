@@ -22,6 +22,7 @@ function WelcomeScreen(props) {
         <View style={styles.buttonBg}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Get Started</Text>
+            <Image style={styles.arrow} source={require('../assets/right-arrow-white.png')}/>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     marginTop: 20,
-    marginBottom: 30
+    marginBottom: 40
   },
 
   welcomeDesc: {
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
+    flexDirection: "row",
     width: '100%',
     height: 60,
     backgroundColor: '#000000',
@@ -83,6 +85,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     fontFamily: "OpenSans-SemiBold",
     //fontWeight: "600"
+  },
+
+  arrow: {
+    position: "absolute",
+    right: 20,
+    color: '#ffffff',
+    width: 24,
+    height: 18
   }
 
 })
