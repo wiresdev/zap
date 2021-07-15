@@ -11,7 +11,7 @@ import {
 
 import colors from '../config/colors';
 
-function WelcomeScreen(props) {
+function LoginScreen(props) {
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default WelcomeScreen;
+export default LoginScreen;
