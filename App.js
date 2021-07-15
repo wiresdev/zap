@@ -1,14 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  Image, 
+  SafeAreaView, 
+  TouchableOpacity 
+} from 'react-native';
 
 export default function App() {
-  console.log("App executed2")
-
-
   return (
-    <View style={styles.container}>
-      <Text>Hello React Native</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity>
+        <Image style={styles.lightning} source={require('./assets/lightning.png')}/>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
 
@@ -19,4 +25,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  lightning: {
+    width: 60,
+    resizeMode: 'contain'
+  }
 });
