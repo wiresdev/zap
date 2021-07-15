@@ -20,8 +20,8 @@ const LoginScreen = ({ navigation, route }) => {
       <SafeAreaView style={styles.background}>
         <View style={styles.body}>
           <Text style={styles.headingText}>Enter you mobile number</Text>
-          <View style={styles.buttonsContainer}>
-          <TouchableOpacity 
+          <View style={styles.inputContainer}>
+            <TouchableOpacity 
               style={styles.countrySelector}
             >
               <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
@@ -60,9 +60,8 @@ const styles = StyleSheet.create({
   },
 
   body: {
+    justifyContent: "center",
     flex: 8,
-    justifyContent: 'center',
-    //backgroundColor: "#343434"
   },
 
   headingText: {
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 20,
-    marginRight: 12
+    marginRight: 12,
   },
 
   phoneInput: {
@@ -103,6 +102,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignContent: "flex-end"
+  },
+
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+
   },
   
   buttonsContainer: {
