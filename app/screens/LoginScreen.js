@@ -13,13 +13,16 @@ import {
 import colors from '../config/colors';
 
 const LoginScreen = ({ navigation, route }) => {
-  const [text, onChangeText] = React.useState("(205) 555-0123");
+  const [text, setText] = React.useState("");
 
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
+        <View style={styles.header}>
+          <Image style={styles.logo} source={require('../assets/lightning-black.png')}/>
+        </View>
         <View style={styles.body}>
-          <Text style={styles.headingText}>Enter you mobile number</Text>
+          <Text style={styles.headingText}>Enter your mobile number</Text>
           <View style={styles.inputContainer}>
             <TouchableOpacity 
               style={styles.countrySelector}
@@ -28,10 +31,12 @@ const LoginScreen = ({ navigation, route }) => {
             </TouchableOpacity>
             <TextInput
               style={styles.phoneInput}
+              onChangeText={text => setText(text)}
               value={text}
               placeholder="(205) 555-0123"
             />
           </View>
+          <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated diialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
         </View>
 
         <View style={styles.buttonBg}>
@@ -59,16 +64,35 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
+  header: {
+    justifyContent: "center",
+    flex: 1,
+  },
+
   body: {
     justifyContent: "center",
     flex: 8,
   },
 
+  logo: {
+    width: "100%",
+    height: 60,
+    resizeMode: "contain",
+  },
+
   headingText: {
     color: colors.foreground,
     paddingLeft: 20,
-    paddingBottom: 12,
+    paddingBottom: 20,
     fontSize: 20,
+    fontFamily: "OpenSans-Regular",
+  },
+
+  termsText: {
+    color: colors.termsText,
+    paddingLeft: 20,
+    paddingTop: 32,
+    fontSize: 12,
     fontFamily: "OpenSans-Regular",
   },
 
@@ -92,7 +116,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     alignItems: "flex-start",
     marginRight: 20,
-    paddingLeft: 12,
+    paddingLeft: 32,
     fontSize: 18,
     fontFamily: "OpenSans-Regular",
   },

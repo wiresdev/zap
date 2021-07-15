@@ -15,6 +15,8 @@ const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
+      <View style={styles.header}>
+        </View>
         <View style={styles.body}>
           <Image style={styles.logo} source={require('../assets/logo-black.png')}/>
           <Image style={styles.welcomeImage} source={require('../assets/welcome-image.jpg')}/>
@@ -41,15 +43,21 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
+  header: {
+    justifyContent: "center",
+    flex: 1,
+  },
+
   body: {
     flex: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: -70
   },
 
   logo: {
     width: "100%",
-    height: 75,
+    height: 70,
     resizeMode: "contain"
   },
 

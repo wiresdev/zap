@@ -5,4 +5,5 @@ export default {
   buttonText: "#ffffff",
   accentButton: "#d5d8db",
   textInput: "#e4e7eb",
+  termsText: "#777777",
 };
