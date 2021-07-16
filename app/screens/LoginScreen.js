@@ -23,20 +23,22 @@ const LoginScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.body}>
           <Text style={styles.headingText}>Enter your mobile number</Text>
-          <View style={styles.inputContainer}>
-            <TouchableOpacity 
-              style={styles.countrySelector}
-            >
-              <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
+          <View style={styles.phoneContainer}>
+            <TouchableOpacity style={styles.countrySelector}>
+              <Text style={styles.countrySelectorIcon}>🇺🇸</Text>
+              <Image style={styles.downCarrot} source={require('../assets/down-carrot.png')}/>
             </TouchableOpacity>
-            <TextInput
-              style={styles.phoneInput}
-              onChangeText={text => setText(text)}
-              value={text}
-              placeholder="(205) 555-0123"
-            />
+            <View style={styles.inputContainer}>
+            <Text style={styles.prefix}>+1</Text>
+              <TextInput
+                style={styles.phoneInput}
+                onChangeText={text => setText(text)}
+                value={text}
+                placeholder="(205) 555-0123"
+              />
+            </View>
           </View>
-          <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated diialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
+          <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated dialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
         </View>
 
         <View style={styles.buttonBg}>
@@ -91,32 +93,61 @@ const styles = StyleSheet.create({
   termsText: {
     color: colors.termsText,
     paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: 32,
     fontSize: 12,
     fontFamily: "OpenSans-Regular",
   },
 
+  countrySelectorIcon: {
+    fontSize: 28,
+    paddingLeft: 20,
+  },
+
   countrySelector: {
     flex: 3,
+    flexDirection: "row",
     height: 60,
     backgroundColor: colors.accentButton,
     borderRadius: 9,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "flex-start",
     marginLeft: 20,
     marginRight: 12,
   },
 
-  phoneInput: {
-    flexDirection: "row",
-    flex: 6,
+  downCarrot: {
+    width: 10,
+    height: 6,
+    position: "absolute",
+    right: 20,
+    paddingLeft: 8
+  },
+
+  inputContainer: {
+    flex: 7,
+    flexDirection: 'row',
     height: 60,
     backgroundColor: colors.textInput,
     borderRadius: 9,
     borderWidth: 2,
-    alignItems: "flex-start",
+    alignItems: "center",
     marginRight: 20,
-    paddingLeft: 32,
+    paddingLeft: 12,
+    fontSize: 18,
+    fontFamily: "OpenSans-Regular",
+  },
+
+  prefix: {
+    fontSize: 18,
+    fontFamily: "OpenSans-Regular",
+    color: colors.foreground
+  },
+
+  phoneInput: {
+    backgroundColor: colors.textInput,
+    marginRight: 20,
+    paddingLeft: 8,
     fontSize: 18,
     fontFamily: "OpenSans-Regular",
   },
@@ -128,7 +159,7 @@ const styles = StyleSheet.create({
     alignContent: "flex-end"
   },
 
-  inputContainer: {
+  phoneContainer: {
     flexDirection: "row",
     justifyContent: "space-evenly",
 
@@ -169,7 +200,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     fontFamily: "OpenSans-SemiBold",
-    //fontWeight: "600"
   },
 
   rightArrow: {
