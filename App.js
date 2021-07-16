@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './app/screens/LoginScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
-import PhoneVerifyScreen from './app/screens/PhoneVerifyScreen';
+import VerifyScreen from './app/screens/VerifyScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import ScanScreen from './app/screens/ScanScreen';
 import CartScreen from './app/screens/CartScreen';
@@ -24,7 +24,7 @@ function App() {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="PhoneVerify" component={PhoneVerifyScreen} />
+        <Stack.Screen name="PhoneVerify" component={VerifyScreen} />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>

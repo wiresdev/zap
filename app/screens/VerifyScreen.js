@@ -20,7 +20,7 @@ import colors from '../config/colors';
 
 const CELL_COUNT = 4;
 
-const PhoneVerifyScreen = ({ navigation, route }) => {
+const VerifyScreen = ({ navigation, route }) => {
   const [text, setText] = React.useState("");
   const [value, setValue] = React.useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
@@ -226,4 +226,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default PhoneVerifyScreen;
+export default VerifyScreen;
