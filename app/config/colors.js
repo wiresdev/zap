@@ -7,4 +7,5 @@ export default {
   textInput: "#e4e7eb",
   termsText: "#777777",
   codeErrorText: "#444444",
+  cardBackground: "#dddddd",
 };

@@ -119,6 +119,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
+  card: {
+    height: 200,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.foreground
+  },
+
   body: {
     flex: 1,
     flexDirection: "column",

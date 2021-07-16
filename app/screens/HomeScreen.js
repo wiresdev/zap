@@ -27,6 +27,11 @@ const HomeScreen = ({ navigation, route }) => {
 
         </View>
 
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+          </View>
+        </View>
+        
         <View style={styles.body}>
           <Text style={styles.text}>HOME</Text>
 
@@ -116,6 +121,35 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+
+  cardContainer: {
+    height: 200,
+    paddingLeft: 24,
+    paddingRight: 24,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    backgroundColor: "green"
+  },
+
+  card: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    top: 40,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 32,
+
+    elevation: 4,
+    backgroundColor: "#ffffff"
   },
 
   body: {
