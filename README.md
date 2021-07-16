@@ -1,4 +1,4 @@
-# Zap
+<img src="/app/assets/logo-black.png" alt="drawing" width="100"/>
 Skip the line, checkout ***fast***.  
 Get **exclusive sales**.  
 All on your phone.
