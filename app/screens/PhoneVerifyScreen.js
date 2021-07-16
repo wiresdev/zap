@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   cell: {
     width: 60,
     height: 60,
-    lineHeight: 55,
+    lineHeight: 50,
     fontSize: 32,
     borderWidth: 2,
     borderColor: '#00000030',
