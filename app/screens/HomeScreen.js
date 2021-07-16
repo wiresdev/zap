@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation, route }) => {
           <View style={styles.gemsContainer}>
             <TouchableOpacity style={styles.gemsButton}>
               <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-              <Text style={styles.gemsText}> +450|$10</Text>
+              <Text style={styles.gemsText}> +450 | $10</Text>
             </TouchableOpacity>
           </View>
 
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   gemsContainer: {
     position: "absolute",
     right: 20,
-    height: 32,
     resizeMode: "contain",
     flexDirection: "row",
     justifyContent: "flex-start",
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
 
   gemsButton: {
     flexDirection: "row",
-    height: 36,
+    height: 40,
     backgroundColor: colors.accentButton,
     borderRadius: 32,
     justifyContent: "flex-start",

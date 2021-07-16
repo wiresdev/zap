@@ -5,15 +5,31 @@ import {
   StyleSheet, 
   Image,
   TouchableOpacity,
+  SafeAreaView
 } from 'react-native';
 
 import colors from '../config/colors';
 
 const CartScreen = ({ navigation, route }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>CART</Text>
-      <View style={styles.buttonBg}>
+    <SafeAreaView style={styles.background}>
+        <View style={styles.header}>
+
+          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+          
+          <View style={styles.gemsContainer}>
+            <TouchableOpacity style={styles.gemsButton}>
+              <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
+              <Text style={styles.gemsText}> +450 | $10</Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+
+        <View style={styles.body}>
+          <Text style={styles.text}>CART</Text>
+
           <View style={styles.buttonsContainer}>
             <TouchableOpacity 
               style={styles.backButton}
@@ -23,12 +39,69 @@ const CartScreen = ({ navigation, route }) => {
             </TouchableOpacity>
           </View>
         </View>
-    </View>
+      </SafeAreaView> 
   );
 };
 
 
 const styles = StyleSheet.create({
+  header: {
+    //flex: 1,
+    marginTop: 10,
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    //backgroundColor: "#dddddd"
+  },
+
+  logo: {
+    width: "100%",
+    height: 32,
+    resizeMode: "contain",
+  },
+
+  sandwhichMenu: {
+    position: "absolute",
+    left: 20,
+    width: 22,
+    height: 18
+  },
+
+  gemsContainer: {
+    position: "absolute",
+    right: 20,
+    resizeMode: "contain",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+
+  gemsButton: {
+    flexDirection: "row",
+    height: 40,
+    backgroundColor: colors.accentButton,
+    borderRadius: 32,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingLeft: 12,
+    paddingRight: 14,
+  },
+
+  gemIcon: {
+    //left: 14,
+    width: 22,
+    height: 20
+  },
+
+  gemsText: {
+    color: colors.foreground,
+    fontSize: 16,
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontFamily: "OpenSans-Bold",
+  },
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -37,7 +110,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    alignSelf: 'center',
+    //alignSelf: 'center',
     fontSize:40,
   },
 
@@ -46,20 +119,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
-  header: {
-    justifyContent: "center",
-    flex: 1,
-  },
-
   body: {
+    flex: 1,
+    flexDirection: "column",
     justifyContent: "center",
-    flex: 8,
+    alignContent: "center",
+    alignItems: "center",
   },
 
-  logo: {
-    width: "100%",
-    height: 60,
-    resizeMode: "contain",
+  buttonBg: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignContent: "flex-end"
   },
 
   headingText: {
@@ -69,45 +140,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "OpenSans-Regular",
   },
-
-  codeErrorContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-  },
-
-  codeErrorButton: {
-    flexDirection: "row",
-    height: 32,
-    backgroundColor: colors.accentButton,
-    borderRadius: 32,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingLeft: 14,
-    paddingRight: 14,
-    marginTop: 32,
-    marginLeft: 20,
-    marginRight: 20
-  },
-
-  codeErrorText: {
-    color: colors.codeErrorText,
-    fontSize: 13,
-    textAlign: 'center',
-    justifyContent: 'center',
-    fontFamily: "OpenSans-SemiBold",
-  },
-
-  buttonBg: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignContent: "flex-end"
-  },
   
   buttonsContainer: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-
   },
 
   backButton: {
@@ -150,7 +186,7 @@ const styles = StyleSheet.create({
   leftArrow: {
     width: 24,
     height: 18
-  }
+  },
 })
 
 export default CartScreen;
