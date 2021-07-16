@@ -71,7 +71,10 @@ const PhoneVerifyScreen = ({ navigation, route }) => {
             >
               <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={() => navigation.navigate('Home')}
+            >
               <Text style={styles.buttonText}>Next</Text>
               <Image style={styles.rightArrow} source={require('../assets/right-arrow-white.png')}/>
             </TouchableOpacity>
