@@ -27,7 +27,7 @@ const TabBar = () => {
           tabBarIcon: ({focused}) => (
             <View>
               <Image 
-                source={focused ? require("../assets/home.png") : require("../assets/home-empty.png")}
+                source={focused ? require("../assets/icons/home.png") : require("../assets/icons/home-empty.png")}
                 style={styles.home}
               />
             </View>
@@ -37,7 +37,7 @@ const TabBar = () => {
           tabBarIcon: ({focused}) => (
             <View>
               <Image 
-                source={focused ? require("../assets/scan.png") : require("../assets/scan-empty.png")}
+                source={focused ? require("../assets/icons/scan.png") : require("../assets/icons/scan-empty.png")}
                 style={styles.scan}
               />
             </View>
@@ -47,7 +47,7 @@ const TabBar = () => {
           tabBarIcon: ({focused}) => (
             <View>
               <Image 
-                source={focused ? require("../assets/cart.png") : require("../assets/cart-empty.png")}
+                source={focused ? require("../assets/icons/cart.png") : require("../assets/icons/cart-empty.png")}
                 style={styles.cart}
               />
             </View>

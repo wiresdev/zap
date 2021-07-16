@@ -18,9 +18,9 @@ const WelcomeScreen = ({ navigation }) => {
       <View style={styles.header}>
         </View>
         <View style={styles.body}>
-          <Image style={styles.logo} source={require('../assets/logo-black.png')}/>
-          <Image style={styles.welcomeImage} source={require('../assets/welcome-image.jpg')}/>
-          <Image style={styles.welcomeDesc} source={require('../assets/welcome-desc.png')}/>
+          <Image style={styles.logo} source={require('../assets/icons/logo-black.png')}/>
+          <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.jpg')}/>
+          <Image style={styles.welcomeDesc} source={require('../assets/images/welcome-desc.png')}/>
         </View>
 
         <View style={styles.buttonBg}>
@@ -29,7 +29,7 @@ const WelcomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate('Login')}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-            <Image style={styles.arrow} source={require('../assets/right-arrow-white.png')}/>
+            <Image style={styles.arrow} source={require('../assets/icons/right-arrow-white.png')}/>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

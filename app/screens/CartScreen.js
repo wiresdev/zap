@@ -19,7 +19,7 @@ const CartScreen = ({ navigation, route }) => {
               style={styles.backButton}
               onPress={() => navigation.navigate('PhoneVerify')}
             >
-              <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
+              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
             </TouchableOpacity>
           </View>
         </View>

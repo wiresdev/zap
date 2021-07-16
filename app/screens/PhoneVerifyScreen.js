@@ -33,7 +33,7 @@ const PhoneVerifyScreen = ({ navigation, route }) => {
     <View style={styles.background}>
       <SafeAreaView style={styles.background}>
         <View style={styles.header}>
-          <Image style={styles.logo} source={require('../assets/lightning-black.png')}/>
+          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
         </View>
         <View style={styles.body}>
           <Text style={styles.headingText}>Enter the 4-digit code sent to you at (480) 302-1113.</Text>
@@ -69,14 +69,14 @@ const PhoneVerifyScreen = ({ navigation, route }) => {
               style={styles.backButton}
               onPress={() => navigation.navigate('Login')}
             >
-              <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
+              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.button}
               onPress={() => navigation.navigate('Home')}
             >
               <Text style={styles.buttonText}>Next</Text>
-              <Image style={styles.rightArrow} source={require('../assets/right-arrow-white.png')}/>
+              <Image style={styles.rightArrow} source={require('../assets/icons/right-arrow-white.png')}/>
             </TouchableOpacity>
           </View>
         </View>
