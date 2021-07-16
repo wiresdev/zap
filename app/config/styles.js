@@ -1,56 +1,7 @@
-import React from 'react';
-import { 
-  View, 
-  Text,
-  StyleSheet, 
-  Image,
-  TouchableOpacity,
-  SafeAreaView
-} from 'react-native';
-
+import { StyleSheet } from 'react-native'
 import colors from '../config/colors';
-import globalStyles from '../config/styles';
 
-const ScanScreen = ({ navigation, route }) => {
-  return (
-    <SafeAreaView style={styles.background}>
-        <View style={styles.header}>
-
-          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-          
-          <View style={styles.gemsContainer}>
-            <TouchableOpacity style={styles.gemsButton}>
-              <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-              <Text style={styles.gemsText}> +450 | $10</Text>
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-        <View style={globalStyles.cardContainer}>
-          <View style={globalStyles.card}>
-          </View>
-        </View>
-
-        <View style={styles.body}>
-          <Text style={styles.text}>SCAN</Text>
-
-          <View style={styles.buttonsContainer}>
-            <TouchableOpacity 
-              style={styles.backButton}
-              onPress={() => navigation.navigate('PhoneVerify')}
-            >
-              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </SafeAreaView> 
-  );
-};
-
-
-const styles = StyleSheet.create({
+const globalStyles = StyleSheet.create({
   header: {
     //flex: 1,
     marginTop: 10,
@@ -125,6 +76,35 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
+  cardContainer: {
+    height: 200,
+    paddingLeft: 24,
+    paddingRight: 24,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    backgroundColor: "green"
+  },
+
+  card: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    top: 40,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 32,
+
+    elevation: 4,
+    backgroundColor: "#ffffff"
+  },
+
   body: {
     flex: 1,
     flexDirection: "column",
@@ -193,6 +173,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 18
   },
+
 })
 
-export default ScanScreen;
+export default globalStyles;

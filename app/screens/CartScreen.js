@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import colors from '../config/colors';
+import globalStyles from '../config/styles';
 
 const CartScreen = ({ navigation, route }) => {
   return (
@@ -27,6 +28,11 @@ const CartScreen = ({ navigation, route }) => {
 
         </View>
 
+        <View style={globalStyles.cardContainer}>
+          <View style={globalStyles.card}>
+          </View>
+        </View>
+        
         <View style={styles.body}>
           <Text style={styles.text}>CART</Text>
 
