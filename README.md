@@ -9,7 +9,13 @@ First:
 
     git clone https://github.com/Zap-Shopping/zap.git
 
-then:
+then, install dependencies:
+
+    cd zap
+    npm install
+    cd ios && gem install cocoapods && pod install
+
+next:
 
     npx react-native start
 
