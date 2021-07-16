@@ -12,7 +12,7 @@ import {
 
 import colors from '../config/colors';
 
-const LoginScreen = ({ navigation, route }) => {
+const PhoneVerifyScreen = ({ navigation, route }) => {
   const [text, setText] = React.useState("");
 
   return (
@@ -22,14 +22,9 @@ const LoginScreen = ({ navigation, route }) => {
           <Image style={styles.logo} source={require('../assets/lightning-black.png')}/>
         </View>
         <View style={styles.body}>
-          <Text style={styles.headingText}>Enter your mobile number</Text>
+          <Text style={styles.headingText}>Enter the 4-digit code sent to you at (480) 302-1113.</Text>
           <View style={styles.phoneContainer}>
-            <TouchableOpacity style={styles.countrySelector}>
-              <Text style={styles.countrySelectorIcon}>🇺🇸</Text>
-              <Image style={styles.downCarrot} source={require('../assets/down-carrot.png')}/>
-            </TouchableOpacity>
             <View style={styles.inputContainer}>
-            <Text style={styles.prefix}>+1</Text>
               <TextInput
                 style={styles.phoneInput}
                 onChangeText={text => setText(text)}
@@ -38,21 +33,17 @@ const LoginScreen = ({ navigation, route }) => {
               />
             </View>
           </View>
-          <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated dialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
         </View>
 
         <View style={styles.buttonBg}>
           <View style={styles.buttonsContainer}>
             <TouchableOpacity 
               style={styles.backButton}
-              onPress={() => navigation.navigate('Welcome')}
+              onPress={() => navigation.navigate('Login')}
             >
               <Image style={styles.leftArrow} source={require('../assets/left-arrow-black.png')}/>
             </TouchableOpacity>
-            <TouchableOpacity 
-              style={styles.button}
-              onPress={() => navigation.navigate('PhoneVerify')}
-            >
+            <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Next</Text>
               <Image style={styles.rightArrow} source={require('../assets/right-arrow-white.png')}/>
             </TouchableOpacity>
@@ -135,6 +126,7 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     borderWidth: 2,
     alignItems: "center",
+    marginLeft: 20,
     marginRight: 20,
     paddingLeft: 12,
     fontSize: 18,
@@ -218,4 +210,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LoginScreen;
+export default PhoneVerifyScreen;
