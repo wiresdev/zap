@@ -139,28 +139,6 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  inputContainer: {
-    flex: 7,
-    flexDirection: 'row',
-    height: 60,
-    backgroundColor: colors.textInput,
-    borderRadius: 9,
-    alignItems: "center",
-    marginLeft: 20,
-    marginRight: 20,
-    paddingLeft: 12,
-    fontSize: 18,
-    fontFamily: "OpenSans-Regular",
-  },
-
-  phoneInput: {
-    backgroundColor: colors.textInput,
-    marginRight: 20,
-    paddingLeft: 8,
-    fontSize: 18,
-    fontFamily: "OpenSans-Regular",
-  },
-
   codeErrorContainer: {
     flexDirection: "row",
     justifyContent: "flex-start",
@@ -193,12 +171,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignContent: "flex-end"
-  },
-
-  phoneContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-
   },
   
   buttonsContainer: {

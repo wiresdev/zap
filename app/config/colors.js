@@ -3,7 +3,7 @@ export default {
   foreground: "#000000",
   button: "#000000",
   buttonText: "#ffffff",
-  accentButton: "#d5d8db",
+  accentButton: "#e4e7eb",
   textInput: "#e4e7eb",
   termsText: "#777777",
   codeErrorText: "#444444",

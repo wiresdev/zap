@@ -35,6 +35,9 @@ const LoginScreen = ({ navigation, route }) => {
                 onChangeText={text => setText(text)}
                 value={text}
                 placeholder="(205) 555-0123"
+                keyboardType="number-pad"
+                returnKeyType="done"
+                maxLength={10}
               />
             </View>
           </View>
@@ -148,6 +151,7 @@ const styles = StyleSheet.create({
   },
 
   phoneInput: {
+    flex: 1,
     backgroundColor: colors.textInput,
     marginRight: 20,
     paddingLeft: 8,
