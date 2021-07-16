@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: colors.background
   },
 
   text: {
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 20,
-    marginRight: 12
+    marginRight: 20
   },
 
   button: {
