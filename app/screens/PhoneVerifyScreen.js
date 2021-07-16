@@ -4,16 +4,30 @@ import {
   Text,
   StyleSheet, 
   Image,
-  StatusBar,
   TouchableOpacity,
   TextInput,
   SafeAreaView
 } from 'react-native';
 
+import {
+  CodeField,
+  Cursor,
+  useBlurOnFulfill,
+  useClearByFocusCell,
+} from 'react-native-confirmation-code-field';
+
 import colors from '../config/colors';
+
+const CELL_COUNT = 4;
 
 const PhoneVerifyScreen = ({ navigation, route }) => {
   const [text, setText] = React.useState("");
+  const [value, setValue] = React.useState('');
+  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+    value,
+    setValue,
+  });
 
   return (
     <View style={styles.background}>
@@ -23,16 +37,30 @@ const PhoneVerifyScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.body}>
           <Text style={styles.headingText}>Enter the 4-digit code sent to you at (480) 302-1113.</Text>
-          <View style={styles.phoneContainer}>
-            <View style={styles.inputContainer}>
-              <TextInput
-                style={styles.phoneInput}
-                onChangeText={text => setText(text)}
-                value={text}
-                placeholder="(205) 555-0123"
-              />
-            </View>
+          <CodeField
+            ref={ref}
+            {...props}
+            value={value}
+            onChangeText={setValue}
+            cellCount={CELL_COUNT}
+            rootStyle={styles.codeFieldRoot}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            renderCell={({index, symbol, isFocused}) => (
+              <Text
+                key={index}
+                style={[styles.cell, isFocused && styles.focusCell]}
+                onLayout={getCellOnLayoutHandler(index)}>
+                {symbol || (isFocused ? <Cursor /> : null)}
+              </Text>
+            )}
+          />
+          <View style={styles.codeErrorContainer}>
+            <TouchableOpacity style={styles.codeErrorButton}>
+              <Text style={styles.codeErrorText}>I didn't receive a code</Text>
+            </TouchableOpacity>
           </View>
+          
         </View>
 
         <View style={styles.buttonBg}>
@@ -55,6 +83,33 @@ const PhoneVerifyScreen = ({ navigation, route }) => {
 };
 
 const styles = StyleSheet.create({
+  root: {flex: 1, padding: 0},
+
+  codeFieldRoot: {
+    marginLeft: 20,
+    marginRight: 20,
+    justifyContent: "flex-start",
+    alignContent: "flex-start",
+  },
+  
+  cell: {
+    width: 60,
+    height: 60,
+    lineHeight: 55,
+    fontSize: 32,
+    borderWidth: 2,
+    borderColor: '#00000030',
+    backgroundColor: colors.textInput,
+    textAlign: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    marginRight: 8
+  },
+
+  focusCell: {
+    borderColor: '#000',
+  },
+
   background: {
     flex: 1,
     backgroundColor: colors.background,
@@ -84,47 +139,12 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  termsText: {
-    color: colors.termsText,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 32,
-    fontSize: 12,
-    fontFamily: "OpenSans-Regular",
-  },
-
-  countrySelectorIcon: {
-    fontSize: 28,
-    paddingLeft: 20,
-  },
-
-  countrySelector: {
-    flex: 3,
-    flexDirection: "row",
-    height: 60,
-    backgroundColor: colors.accentButton,
-    borderRadius: 9,
-    alignItems: 'center',
-    justifyContent: "flex-start",
-    marginLeft: 20,
-    marginRight: 12,
-  },
-
-  downCarrot: {
-    width: 10,
-    height: 6,
-    position: "absolute",
-    right: 20,
-    paddingLeft: 8
-  },
-
   inputContainer: {
     flex: 7,
     flexDirection: 'row',
     height: 60,
     backgroundColor: colors.textInput,
     borderRadius: 9,
-    borderWidth: 2,
     alignItems: "center",
     marginLeft: 20,
     marginRight: 20,
@@ -133,18 +153,39 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  prefix: {
-    fontSize: 18,
-    fontFamily: "OpenSans-Regular",
-    color: colors.foreground
-  },
-
   phoneInput: {
     backgroundColor: colors.textInput,
     marginRight: 20,
     paddingLeft: 8,
     fontSize: 18,
     fontFamily: "OpenSans-Regular",
+  },
+
+  codeErrorContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+
+  codeErrorButton: {
+    flexDirection: "row",
+    height: 32,
+    backgroundColor: colors.accentButton,
+    borderRadius: 32,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingLeft: 14,
+    paddingRight: 14,
+    marginTop: 32,
+    marginLeft: 20,
+    marginRight: 20
+  },
+
+  codeErrorText: {
+    color: colors.codeErrorText,
+    fontSize: 13,
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontFamily: "OpenSans-SemiBold",
   },
 
   buttonBg: {

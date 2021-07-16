@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation, route }) => {
               <Image style={styles.downCarrot} source={require('../assets/down-carrot.png')}/>
             </TouchableOpacity>
             <View style={styles.inputContainer}>
-            <Text style={styles.prefix}>+1</Text>
+              <Text style={styles.prefix}>+1</Text>
               <TextInput
                 style={styles.phoneInput}
                 onChangeText={text => setText(text)}
