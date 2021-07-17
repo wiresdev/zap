@@ -36,7 +36,6 @@
 		D958373526A01E2800C7075E /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D958372226A01E2800C7075E /* OpenSans-Regular.ttf */; };
 		D958373626A01E2800C7075E /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D958372226A01E2800C7075E /* OpenSans-Regular.ttf */; };
 		D958373826A01E5B00C7075E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
-		D9DA1C9C26A38EE7004010AD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
 		F9B93DA1BEDFF2D7068F7B5D /* libPods-zap-zapTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B9FCFE8B1F22AFD4896324 /* libPods-zap-zapTests.a */; };
 /* End PBXBuildFile section */
 
@@ -306,7 +305,6 @@
 				D958372D26A01E2800C7075E /* OpenSans-SemiBold.ttf in Resources */,
 				D958372926A01E2800C7075E /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				D920120826A2D401004B51C5 /* app-icon.png in Resources */,
-				D9DA1C9C26A38EE7004010AD /* Info.plist in Resources */,
 				D958372326A01E2800C7075E /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
