@@ -84,14 +84,14 @@ const globalStyles = StyleSheet.create({
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
-    backgroundColor: "green"
+    //backgroundColor: "green"
   },
 
   card: {
     flex: 1,
     width: "100%",
     height: "100%",
-    top: 40,
+    top: 32,
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: {

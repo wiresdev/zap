@@ -6,13 +6,20 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  ImageBackground
 } from 'react-native';
 
 import colors from '../config/colors';
+import globalStyles from '../config/styles';
+
 
 const HomeScreen = ({ navigation, route }) => {
   return (
       <SafeAreaView style={styles.background}>
+        <View style={styles.topContainer}>
+          <ImageBackground source={require('../assets/images/holo.png')} resizeMode="cover" style={styles.image}></ImageBackground>
+        </View>
+
         <View style={styles.header}>
 
           <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
@@ -27,37 +34,67 @@ const HomeScreen = ({ navigation, route }) => {
 
         </View>
 
-        <View style={styles.cardContainer}>
-          <View style={styles.card}>
+        <View style={globalStyles.cardContainer}>
+          <View style={globalStyles.card}>
           </View>
         </View>
         
         <View style={styles.body}>
-          <Text style={styles.text}>HOME</Text>
-
-          <View style={styles.buttonsContainer}>
-            <TouchableOpacity 
-              style={styles.backButton}
-              onPress={() => navigation.navigate('PhoneVerify')}
-            >
-              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-            </TouchableOpacity>
-          </View>
+          <Text style={styles.bodyHeader}>Ready to start shopping?</Text>
+          <Text style={styles.bodyText}>Searching for nearby stores...</Text>
+          <Text style={styles.bodyHeader}>Daily deals near you</Text>
         </View>
       </SafeAreaView> 
   );
 };
 
 const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  },
+
+  bodyHeader: {
+    //color: colors.foreground,
+    paddingLeft: 20,
+    paddingBottom: 12,
+    fontSize: 24,
+    alignSelf: "flex-start",
+    fontFamily: "OpenSans-Regular",
+  },
+
+  topContainer: {
+    position: "absolute",
+    width: "100%",
+    height: 297,
+    //backgroundColor: "#000000",
+  },
+
+  bodyText: {
+    color: colors.termsText,
+    paddingLeft: 20,
+    paddingBottom: 150,
+    fontSize: 14,
+    alignSelf: "flex-start",
+    fontFamily: "OpenSans-Regular",
+  },
+
+  body: {
+    flex: 1,
+    paddingTop: 60,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignContent: "center",
+    alignItems: "center",
+  },
+
   header: {
-    //flex: 1,
     marginTop: 10,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     alignContent: "center",
-    //backgroundColor: "#dddddd"
   },
 
   logo: {
@@ -84,7 +121,7 @@ const styles = StyleSheet.create({
   gemsButton: {
     flexDirection: "row",
     height: 40,
-    backgroundColor: colors.accentButton,
+    backgroundColor: colors.gemButton,
     borderRadius: 32,
     justifyContent: "flex-start",
     alignItems: "center",
@@ -123,55 +160,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
-  cardContainer: {
-    height: 200,
-    paddingLeft: 24,
-    paddingRight: 24,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    backgroundColor: "green"
-  },
-
-  card: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    top: 40,
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 32,
-
-    elevation: 4,
-    backgroundColor: "#ffffff"
-  },
-
-  body: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-  },
-
   buttonBg: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignContent: "flex-end"
-  },
-
-  headingText: {
-    color: colors.foreground,
-    paddingLeft: 20,
-    paddingBottom: 20,
-    fontSize: 20,
-    fontFamily: "OpenSans-Regular",
   },
   
   buttonsContainer: {

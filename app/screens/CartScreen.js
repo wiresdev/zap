@@ -5,7 +5,8 @@ import {
   StyleSheet, 
   Image,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  ImageBackground
 } from 'react-native';
 
 import colors from '../config/colors';
@@ -14,52 +15,92 @@ import globalStyles from '../config/styles';
 const CartScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.background}>
-        <View style={styles.header}>
+        <View style={styles.topContainer}>
+        <ImageBackground source={require('../assets/images/holo.png')} resizeMode="cover" style={styles.image}></ImageBackground>
+      </View>
+      <View style={styles.header}>
 
-          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-          
-          <View style={styles.gemsContainer}>
-            <TouchableOpacity style={styles.gemsButton}>
-              <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-              <Text style={styles.gemsText}> +450 | $10</Text>
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-        <View style={globalStyles.cardContainer}>
-          <View style={globalStyles.card}>
-          </View>
-        </View>
+        <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+        <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
         
-        <View style={styles.body}>
-          <Text style={styles.text}>CART</Text>
-
-          <View style={styles.buttonsContainer}>
-            <TouchableOpacity 
-              style={styles.backButton}
-              onPress={() => navigation.navigate('PhoneVerify')}
-            >
-              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.gemsContainer}>
+          <TouchableOpacity style={styles.gemsButton}>
+            <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
+            <Text style={styles.gemsText}> +450 | $10</Text>
+          </TouchableOpacity>
         </View>
-      </SafeAreaView> 
+
+      </View>
+
+      <View style={globalStyles.cardContainer}>
+        <View style={globalStyles.card}>
+        </View>
+      </View>
+      
+      <View style={styles.body}>
+        <Text style={styles.text}>CART</Text>
+
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity 
+            style={styles.backButton}
+            onPress={() => navigation.navigate('PhoneVerify')}
+          >
+            <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView> 
   );
 };
 
 
 const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  },
+
+  bodyHeader: {
+    //color: colors.foreground,
+    paddingLeft: 20,
+    paddingBottom: 12,
+    fontSize: 24,
+    alignSelf: "flex-start",
+    fontFamily: "OpenSans-Regular",
+  },
+
+  topContainer: {
+    position: "absolute",
+    width: "100%",
+    height: 297,
+    //backgroundColor: "#000000",
+  },
+
+  bodyText: {
+    color: colors.termsText,
+    paddingLeft: 20,
+    paddingBottom: 150,
+    fontSize: 14,
+    alignSelf: "flex-start",
+    fontFamily: "OpenSans-Regular",
+  },
+
+  body: {
+    flex: 1,
+    paddingTop: 60,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignContent: "center",
+    alignItems: "center",
+  },
+
   header: {
-    //flex: 1,
     marginTop: 10,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     alignContent: "center",
-    //backgroundColor: "#dddddd"
   },
 
   logo: {
@@ -86,7 +127,7 @@ const styles = StyleSheet.create({
   gemsButton: {
     flexDirection: "row",
     height: 40,
-    backgroundColor: colors.accentButton,
+    backgroundColor: colors.gemButton,
     borderRadius: 32,
     justifyContent: "flex-start",
     alignItems: "center",
@@ -125,35 +166,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
-  card: {
-    height: 200,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.foreground
-  },
-
-  body: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-  },
-
   buttonBg: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignContent: "flex-end"
-  },
-
-  headingText: {
-    color: colors.foreground,
-    paddingLeft: 20,
-    paddingBottom: 20,
-    fontSize: 20,
-    fontFamily: "OpenSans-Regular",
   },
   
   buttonsContainer: {
@@ -202,6 +218,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 18
   },
+
 })
 
 export default CartScreen;
