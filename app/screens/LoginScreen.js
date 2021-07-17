@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: colors.accentButton,
     borderRadius: 9,
+    borderWidth: 1,
     alignItems: 'center',
     justifyContent: "flex-start",
     marginLeft: 20,
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: colors.textInput,
     borderRadius: 9,
-    borderWidth: 2,
+    borderWidth: 1,
     alignItems: "center",
     marginRight: 20,
     paddingLeft: 12,
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
 
   phoneInput: {
     flex: 1,
-    backgroundColor: colors.textInput,
+    //backgroundColor: colors.textInput,
     marginRight: 20,
     paddingLeft: 8,
     fontSize: 18,
