@@ -21,7 +21,7 @@ const WelcomeScreen = ({ navigation }) => {
           </View>
           <View style={styles.body}>
             <Image style={styles.logo} source={require('../assets/icons/logo-black.png')}/>
-            <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.jpg')}/>
+            <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.png')}/>
             <Image style={styles.welcomeDesc} source={require('../assets/images/welcome-desc.png')}/>
           </View>
 
