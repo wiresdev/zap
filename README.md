@@ -1,10 +1,11 @@
 <img src="/app/assets/icons/logo-black.png" alt="drawing" width="100"/>
 
-Skip the line, checkout ***fast***.  
+Skip the line, checkout **_fast_**.  
 Get **exclusive sales**.  
 All on your phone.
 
 ### Download & Run
+
 First:
 
     git clone https://github.com/Zap-Shopping/zap.git
@@ -13,7 +14,8 @@ then, install dependencies:
 
     cd zap
     npm install
-    cd ios && gem install cocoapods && pod install
+    gem install cocoapods
+    npx pod-install
 
 next:
 
@@ -21,4 +23,4 @@ next:
 
 finally, run your ios/android simulator:
 
-   `npx react-native run-ios` or `npx react-native run-android`
+`npx react-native run-ios` or `npx react-native run-android`

@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   ImageBackground
 } from 'react-native';
+import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
@@ -15,8 +16,18 @@ import globalStyles from '../config/styles';
 const CartScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.background}>
-        <View style={styles.topContainer}>
-        <ImageBackground source={require('../assets/images/holo.png')} resizeMode="cover" style={styles.image}></ImageBackground>
+      <View style={styles.topContainer}>
+        <Video source={require('../assets/videos/holo.mp4')}   // Can be a URL or a local file.
+          ref={(ref) => {
+            this.player = ref
+          }}                                      // Store reference
+          onBuffer={this.onBuffer}                // Callback when remote video is buffering
+          onError={this.videoError}               // Callback when video cannot be loaded
+          style={styles.backgroundVideo}
+          rate={1.0}
+          muted={true}
+          resizeMode={"cover"}
+          repeat />
       </View>
       <View style={styles.header}>
 
@@ -58,6 +69,16 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: "center"
+  },
+
+  backgroundVideo: {
+    flex: 1,
+    justifyContent: "center",
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 
   bodyHeader: {
