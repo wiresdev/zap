@@ -6,7 +6,8 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  ImageBackground
 } from 'react-native';
 
 import colors from '../config/colors';
@@ -14,25 +15,27 @@ import colors from '../config/colors';
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.background}>
-      <SafeAreaView style={styles.background}>
-      <View style={styles.header}>
-        </View>
-        <View style={styles.body}>
-          <Image style={styles.logo} source={require('../assets/icons/logo-black.png')}/>
-          <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.jpg')}/>
-          <Image style={styles.welcomeDesc} source={require('../assets/images/welcome-desc.png')}/>
-        </View>
+      <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.imageBackground}>
+        <SafeAreaView style={styles.background}>
+        <View style={styles.header}>
+          </View>
+          <View style={styles.body}>
+            <Image style={styles.logo} source={require('../assets/icons/logo-black.png')}/>
+            <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.jpg')}/>
+            <Image style={styles.welcomeDesc} source={require('../assets/images/welcome-desc.png')}/>
+          </View>
 
-        <View style={styles.buttonBg}>
-          <TouchableOpacity 
-          style={styles.button}
-          onPress={() => navigation.navigate('Login')}
-          >
-            <Text style={styles.buttonText}>Get Started</Text>
-            <Image style={styles.arrow} source={require('../assets/icons/right-arrow-white.png')}/>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
+          <View style={styles.buttonBg}>
+            <TouchableOpacity 
+            style={styles.button}
+            onPress={() => navigation.navigate('Login')}
+            >
+              <Text style={styles.buttonText}>Get Started</Text>
+              <Image style={styles.arrow} source={require('../assets/icons/right-arrow-white.png')}/>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
     </View>
   );
 };
@@ -40,7 +43,12 @@ const WelcomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: colors.background,
+    //backgroundColor: colors.background,
+  },
+
+  imageBackground: {
+    flex: 1,
+    //backgroundColor: colors.background,
   },
 
   header: {

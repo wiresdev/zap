@@ -7,7 +7,8 @@ import {
   StatusBar,
   TouchableOpacity,
   TextInput,
-  SafeAreaView
+  SafeAreaView,
+  ImageBackground
 } from 'react-native';
 
 import colors from '../config/colors';
@@ -17,51 +18,53 @@ const LoginScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.background}>
-      <SafeAreaView style={styles.background}>
-        <View style={styles.header}>
-          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-        </View>
-        <View style={styles.body}>
-          <Text style={styles.headingText}>Enter your mobile number</Text>
-          <View style={styles.phoneContainer}>
-            <TouchableOpacity style={styles.countrySelector}>
-              <Text style={styles.countrySelectorIcon}>🇺🇸</Text>
-              <Image style={styles.downCarrot} source={require('../assets/icons/down-carrot.png')}/>
-            </TouchableOpacity>
-            <View style={styles.inputContainer}>
-              <Text style={styles.prefix}>+1</Text>
-              <TextInput
-                style={styles.phoneInput}
-                onChangeText={text => setText(text)}
-                value={text}
-                placeholder="(205) 555-0123"
-                keyboardType="number-pad"
-                returnKeyType="done"
-                maxLength={10}
-              />
+      <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.imageBackground}>
+        <SafeAreaView style={styles.background}>
+          <View style={styles.header}>
+            <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+          </View>
+          <View style={styles.body}>
+            <Text style={styles.headingText}>Enter your mobile number</Text>
+            <View style={styles.phoneContainer}>
+              <TouchableOpacity style={styles.countrySelector}>
+                <Text style={styles.countrySelectorIcon}>🇺🇸</Text>
+                <Image style={styles.downCarrot} source={require('../assets/icons/down-carrot.png')}/>
+              </TouchableOpacity>
+              <View style={styles.inputContainer}>
+                <Text style={styles.prefix}>+1</Text>
+                <TextInput
+                  style={styles.phoneInput}
+                  onChangeText={text => setText(text)}
+                  value={text}
+                  placeholder="(205) 555-0123"
+                  keyboardType="number-pad"
+                  returnKeyType="done"
+                  maxLength={10}
+                />
+              </View>
+            </View>
+            <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated dialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
+          </View>
+
+          <View style={styles.buttonBg}>
+            <View style={styles.buttonsContainer}>
+              <TouchableOpacity 
+                style={styles.backButton}
+                onPress={() => navigation.navigate('Welcome')}
+              >
+                <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
+              </TouchableOpacity>
+              <TouchableOpacity 
+                style={styles.button}
+                onPress={() => navigation.navigate('PhoneVerify')}
+              >
+                <Text style={styles.buttonText}>Next</Text>
+                <Image style={styles.rightArrow} source={require('../assets/icons/right-arrow-white.png')}/>
+              </TouchableOpacity>
             </View>
           </View>
-          <Text style={styles.termsText}>By proceeding, you are consenting to receive calls or SMS messages, including by automated dialer, from Zap and its affiliates to the number you provide. You understand that you may opt out by texting "STOP" to 87203.</Text>
-        </View>
-
-        <View style={styles.buttonBg}>
-          <View style={styles.buttonsContainer}>
-            <TouchableOpacity 
-              style={styles.backButton}
-              onPress={() => navigation.navigate('Welcome')}
-            >
-              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-            </TouchableOpacity>
-            <TouchableOpacity 
-              style={styles.button}
-              onPress={() => navigation.navigate('PhoneVerify')}
-            >
-              <Text style={styles.buttonText}>Next</Text>
-              <Image style={styles.rightArrow} source={require('../assets/icons/right-arrow-white.png')}/>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </SafeAreaView>
+        </SafeAreaView>
+      </ImageBackground>
     </View>
   );
 };
@@ -69,7 +72,12 @@ const LoginScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: colors.background,
+    //backgroundColor: colors.background,
+  },
+
+  imageBackground: {
+    flex: 1,
+    //backgroundColor: colors.background,
   },
 
   header: {
