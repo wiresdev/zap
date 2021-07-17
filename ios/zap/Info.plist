@@ -23,7 +23,7 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>app-icon-new.png</string>
+		<string>app-icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
