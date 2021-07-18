@@ -60,7 +60,7 @@ const TabBar = () => {
 const styles = StyleSheet.create({
   tabBar: {
       backgroundColor: colors.background,
-      height: 90
+      //height: 90
   },
 
   home: {
