@@ -17,17 +17,7 @@ const CartScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.topContainer}>
-        <Video source={require('../assets/videos/holo.mp4')}   // Can be a URL or a local file.
-          ref={(ref) => {
-            this.player = ref
-          }}                                      // Store reference
-          onBuffer={this.onBuffer}                // Callback when remote video is buffering
-          onError={this.videoError}               // Callback when video cannot be loaded
-          style={styles.backgroundVideo}
-          rate={1.0}
-          muted={true}
-          resizeMode={"cover"}
-          repeat />
+        
       </View>
       <View style={styles.header}>
 
@@ -37,7 +27,7 @@ const CartScreen = ({ navigation, route }) => {
         <View style={styles.gemsContainer}>
           <TouchableOpacity style={styles.gemsButton}>
             <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-            <Text style={styles.gemsText}> +450 | $10</Text>
+            <Text style={styles.gemsText}> +45 | $10</Text>
           </TouchableOpacity>
         </View>
 
