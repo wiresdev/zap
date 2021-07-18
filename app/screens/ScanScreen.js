@@ -18,7 +18,7 @@ const ScanScreen = ({ navigation, route }) => {
   
   return (
     <SafeAreaView style={styles.background}>
-      <View style={styles.topContainer}>
+      <View style={globalStyles.topContainer}>
         <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
 

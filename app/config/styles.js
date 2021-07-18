@@ -26,44 +26,17 @@ const globalStyles = StyleSheet.create({
     height: 18
   },
 
-  gemsContainer: {
-    position: "absolute",
-    right: 20,
-    resizeMode: "contain",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-  },
-
-  gemsButton: {
-    flexDirection: "row",
-    height: 40,
-    backgroundColor: colors.accentButton,
-    borderRadius: 32,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingLeft: 12,
-    paddingRight: 14,
-  },
-
-  gemIcon: {
-    //left: 14,
-    width: 22,
-    height: 20
-  },
-
-  gemsText: {
-    color: colors.foreground,
-    fontSize: 16,
-    textAlign: 'center',
-    justifyContent: 'center',
-    fontFamily: "OpenSans-Bold",
-  },
-
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: "center",
     backgroundColor: colors.background
+  },
+
+  topContainer: {
+    position: "absolute",
+    width: "100%",
+    height: "40%",
   },
 
   text: {
@@ -91,7 +64,7 @@ const globalStyles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: "100%",
-    top: 32,
+    top: 20,
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: {
@@ -101,8 +74,9 @@ const globalStyles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 32,
 
-    elevation: 4,
-    backgroundColor: "rgba(255, 255, 255, 0.75)"
+    elevation: 1,
+    backgroundColor: "#ffffff",
+    //backgroundColor: "green",
   },
 
   body: {

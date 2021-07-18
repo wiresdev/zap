@@ -17,7 +17,7 @@ import globalStyles from '../config/styles';
 const HomeScreen = ({ navigation, route }) => {
   return (
       <SafeAreaView style={styles.background}>
-        <View style={styles.topContainer}>
+        <View style={globalStyles.topContainer}>
           <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
         </View>
 
@@ -47,6 +47,12 @@ const HomeScreen = ({ navigation, route }) => {
 };
 
 const styles = StyleSheet.create({
+  topContainer: {
+    position: "absolute",
+    width: "100%",
+    height: "40%",
+  },
+
   image: {
     flex: 1,
     justifyContent: "center"
@@ -69,13 +75,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     alignSelf: "flex-start",
     fontFamily: "OpenSans-Regular",
-  },
-
-  topContainer: {
-    position: "absolute",
-    width: "100%",
-    height: 297,
-    //backgroundColor: "#000000",
   },
 
   bodyText: {
