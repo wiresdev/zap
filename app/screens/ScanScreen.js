@@ -57,11 +57,11 @@ const ScanScreen = ({ navigation, route }) => {
             showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
           />
         </View>
+        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
     </SafeAreaView> 
   );
 };
-
 
 const styles = StyleSheet.create({
   scannerContainer: {
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     paddingRight: 40,
     paddingBottom: 80,
-    //backgroundColor: "#444444"
+    //backgroundColor: "green"
   },
 
   scanner: {
@@ -80,6 +80,13 @@ const styles = StyleSheet.create({
     borderWidth: Platform.OS === 'ios' ? 2 : 4,
     borderRadius: 5,
     borderColor: "#ebebeb"
+  },
+
+  itemAdded: {
+    width: "100%",
+    marginTop: 20,
+    height: 20,
+    resizeMode: "contain",
   },
 
   image: {
