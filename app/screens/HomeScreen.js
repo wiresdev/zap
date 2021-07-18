@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation, route }) => {
   return (
       <SafeAreaView style={styles.background}>
         <View style={styles.topContainer}>
-          
+          <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
         </View>
 
         <View style={styles.header}>
@@ -27,10 +27,7 @@ const HomeScreen = ({ navigation, route }) => {
           <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
           
           <View style={styles.gemsContainer}>
-            <TouchableOpacity style={styles.gemsButton}>
-              <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-              <Text style={styles.gemsText}> +45 | $10</Text>
-            </TouchableOpacity>
+            
           </View>
 
         </View>

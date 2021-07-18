@@ -19,7 +19,7 @@ const ScanScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.topContainer}>
-      
+        <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
 
       <View style={styles.header}>
@@ -28,10 +28,7 @@ const ScanScreen = ({ navigation, route }) => {
         <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
         
         <View style={styles.gemsContainer}>
-          <TouchableOpacity style={styles.gemsButton}>
-            <Image style={styles.gemIcon} source={require('../assets/icons/gem.png')}/>
-            <Text style={styles.gemsText}> +45 | $10</Text>
-          </TouchableOpacity>
+          
         </View>
 
       </View>
@@ -68,16 +65,12 @@ const styles = StyleSheet.create({
     paddingRight: 32,
     paddingBottom: 40
     //backgroundColor: "#444444"
-    //alignItems: "center"
   },
 
   scanner: {
-    //flex: 1,
     height: "100%",
     width: "100%",
-    //resizeMode: "contain",
     alignSelf: "center"
-    //alignItems: "center"
   },
 
   image: {
