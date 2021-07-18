@@ -6,7 +6,8 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-  ImageBackground
+  ImageBackground,
+  StatusBar
 } from 'react-native';
 import Video from 'react-native-video';
 
@@ -16,6 +17,11 @@ import globalStyles from '../config/styles';
 const CartScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.background}>
+      <StatusBar
+        translucent={true}
+        backgroundColor={colors.fullyTranslucent} 
+        barStyle="dark-content"/>
+        
       <View style={globalStyles.topContainer}>
         <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
