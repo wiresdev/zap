@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ImageBackground,
-  StatusBar
+  StatusBar,
+  Platform
 } from 'react-native';
 import Video from 'react-native-video';
 
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    marginTop: 10,
+    marginTop: Platform.OS === 'ios' ? 10 : StatusBar.currentHeight,
     height: 40,
     flexDirection: "row",
     alignItems: "center",

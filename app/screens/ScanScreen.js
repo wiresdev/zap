@@ -23,7 +23,7 @@ const ScanScreen = ({ navigation, route }) => {
         translucent={true}
         backgroundColor={colors.fullyTranslucent} 
         barStyle="dark-content"/>
-        
+
       <View style={globalStyles.topContainer}>
         <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    marginTop: 10,
+    marginTop: Platform.OS === 'ios' ? 10 : StatusBar.currentHeight,
     height: 40,
     flexDirection: "row",
     alignItems: "center",

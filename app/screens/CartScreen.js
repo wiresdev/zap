@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    marginTop: 10,
+    marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
