@@ -36,7 +36,7 @@ const globalStyles = StyleSheet.create({
   topContainer: {
     position: "absolute",
     width: "100%",
-    height: "40%",
+    height: Platform.OS === 'ios' ? "38%" : "40%",
   },
 
   text: {
