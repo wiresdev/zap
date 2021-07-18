@@ -32,58 +32,56 @@ const VerifyScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.background}>
-      <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.imageBackground}>
-        <SafeAreaView style={styles.background}>
-          <View style={styles.header}>
-            <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+      <SafeAreaView style={styles.background}>
+        <View style={styles.header}>
+          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.headingText}>Enter the 4-digit code sent to you at (480) 302-1113.</Text>
+          <CodeField
+            ref={ref}
+            {...props}
+            value={value}
+            onChangeText={setValue}
+            cellCount={CELL_COUNT}
+            rootStyle={styles.codeFieldRoot}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            renderCell={({index, symbol, isFocused}) => (
+              <Text
+                key={index}
+                style={[styles.cell, isFocused && styles.focusCell]}
+                onLayout={getCellOnLayoutHandler(index)}>
+                {symbol || (isFocused ? <Cursor /> : null)}
+              </Text>
+            )}
+          />
+          <View style={styles.codeErrorContainer}>
+            <TouchableOpacity style={styles.codeErrorButton}>
+              <Text style={styles.codeErrorText}>I didn't receive a code</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.body}>
-            <Text style={styles.headingText}>Enter the 4-digit code sent to you at (480) 302-1113.</Text>
-            <CodeField
-              ref={ref}
-              {...props}
-              value={value}
-              onChangeText={setValue}
-              cellCount={CELL_COUNT}
-              rootStyle={styles.codeFieldRoot}
-              keyboardType="number-pad"
-              textContentType="oneTimeCode"
-              renderCell={({index, symbol, isFocused}) => (
-                <Text
-                  key={index}
-                  style={[styles.cell, isFocused && styles.focusCell]}
-                  onLayout={getCellOnLayoutHandler(index)}>
-                  {symbol || (isFocused ? <Cursor /> : null)}
-                </Text>
-              )}
-            />
-            <View style={styles.codeErrorContainer}>
-              <TouchableOpacity style={styles.codeErrorButton}>
-                <Text style={styles.codeErrorText}>I didn't receive a code</Text>
-              </TouchableOpacity>
-            </View>
-            
-          </View>
+          
+        </View>
 
-          <View style={styles.buttonBg}>
-            <View style={styles.buttonsContainer}>
-              <TouchableOpacity 
-                style={styles.backButton}
-                onPress={() => navigation.navigate('Login')}
-              >
-                <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-              </TouchableOpacity>
-              <TouchableOpacity 
-                style={styles.button}
-                onPress={() => navigation.navigate('Home')}
-              >
-                <Text style={styles.buttonText}>Next</Text>
-                <Image style={styles.rightArrow} source={require('../assets/icons/right-arrow-white.png')}/>
-              </TouchableOpacity>
-            </View>
+        <View style={styles.buttonBg}>
+          <View style={styles.buttonsContainer}>
+            <TouchableOpacity 
+              style={styles.backButton}
+              onPress={() => navigation.navigate('Login')}
+            >
+              <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={() => navigation.navigate('Home')}
+            >
+              <Text style={styles.buttonText}>Next</Text>
+              <Image style={styles.rightArrow} source={require('../assets/icons/right-arrow-white.png')}/>
+            </TouchableOpacity>
           </View>
-        </SafeAreaView>
-      </ImageBackground>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
 
   background: {
     flex: 1,
-    //backgroundColor: colors.background,
+    backgroundColor: colors.background,
   },
 
   imageBackground: {

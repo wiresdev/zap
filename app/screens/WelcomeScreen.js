@@ -15,13 +15,12 @@ import colors from '../config/colors';
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.background}>
-      <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.imageBackground}>
         <SafeAreaView style={styles.background}>
         <View style={styles.header}>
           </View>
           <View style={styles.body}>
             <Image style={styles.logo} source={require('../assets/icons/logo-black.png')}/>
-            <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image.png')}/>
+            <Image style={styles.welcomeImage} source={require('../assets/images/welcome-image-noborder.png')}/>
             <Image style={styles.welcomeDesc} source={require('../assets/images/welcome-desc.png')}/>
           </View>
 
@@ -35,7 +34,6 @@ const WelcomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </SafeAreaView>
-      </ImageBackground>
     </View>
   );
 };
@@ -43,7 +41,7 @@ const WelcomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    //backgroundColor: colors.background,
+    backgroundColor: colors.background,
   },
 
   imageBackground: {
