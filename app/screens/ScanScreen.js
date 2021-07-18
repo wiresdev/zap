@@ -12,9 +12,10 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
-import { CameraScreen } from 'react-native-camera-kit';
+import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
+  
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.topContainer}>
@@ -41,13 +42,15 @@ const ScanScreen = ({ navigation, route }) => {
       </View>
 
       <View style={styles.body}>
-        <CameraScreen
+        <Camera
+          style={styles.scanner}
           hideControls={false} // (default false) optional, hides camera controls
           showCapturedImageCount={false} // (default false) optional, show count for photos taken during that capture session
           // Barcode props
           scanBarcode={true}
+          cameraType={CameraType.Back}
           onReadCode={(event) => Alert.alert('QR code found')} // optional
-          showFrame={true} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
+          showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
           laserColor='red' // (default red) optional, color of laser in scanner frame
           frameColor='white' // (default white) optional, color of border of scanner frame
         />
@@ -58,6 +61,25 @@ const ScanScreen = ({ navigation, route }) => {
 
 
 const styles = StyleSheet.create({
+  body: {
+    flex: 1,
+    paddingTop: 60,
+    paddingLeft: 32,
+    paddingRight: 32,
+    paddingBottom: 40
+    //backgroundColor: "#444444"
+    //alignItems: "center"
+  },
+
+  scanner: {
+    //flex: 1,
+    height: "100%",
+    width: "100%",
+    //resizeMode: "contain",
+    alignSelf: "center"
+    //alignItems: "center"
+  },
+
   image: {
     flex: 1,
     justifyContent: "center"
@@ -96,15 +118,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     alignSelf: "flex-start",
     fontFamily: "OpenSans-Regular",
-  },
-
-  body: {
-    flex: 1,
-    paddingTop: 60,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
   },
 
   header: {
