@@ -12,6 +12,7 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
+import { CameraScreen } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
   return (
@@ -50,16 +51,18 @@ const ScanScreen = ({ navigation, route }) => {
       </View>
 
       <View style={styles.body}>
-        <Text style={styles.text}>SCAN</Text>
-
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => navigation.navigate('PhoneVerify')}
-          >
-            <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-          </TouchableOpacity>
-        </View>
+      <CameraScreen
+        //actions={{ rightButtonText: 'Done', leftButtonText: 'Cancel' }}
+        //onBottomButtonPressed={(event) => this.onBottomButtonPressed(event)}
+        //hideControls={false} // (default false) optional, hides camera controls
+        showCapturedImageCount={true} // (default false) optional, show count for photos taken during that capture session
+        // Barcode props
+        scanBarcode={true}
+        onReadCode={(event) => Alert.alert('QR code found')} // optional
+        showFrame={true} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
+        laserColor='red' // (default red) optional, color of laser in scanner frame
+        frameColor='white' // (default white) optional, color of border of scanner frame
+      />
       </View>
     </SafeAreaView> 
   );
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
   },
