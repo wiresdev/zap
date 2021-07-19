@@ -42,7 +42,6 @@ const ScanScreen = ({ navigation, route }) => {
       </View>
 
       <View style={styles.scannerContainer}>
-        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
         <View style={styles.scannerBorder}>
           <Camera
             style={styles.scanner}
@@ -56,6 +55,7 @@ const ScanScreen = ({ navigation, route }) => {
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
         </View>
+        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
     </SafeAreaView> 
   );
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingLeft: 40,
     paddingRight: 40,
-    paddingBottom: 30,
+    paddingBottom: 60,
     //backgroundColor: "green"
   },
 
@@ -114,12 +114,9 @@ const styles = StyleSheet.create({
   },
 
   itemAdded: {
-    position: "absolute",
     width: "100%",
-    alignSelf: "center",
-    top: 70,
-    zIndex: 1,
-    height: 24,
+    marginTop: 12,
+    height: 28,
     resizeMode: "contain",
   },
 
