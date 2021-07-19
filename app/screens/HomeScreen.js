@@ -14,41 +14,20 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
+import CardHeading from '../components/CardHeading';
 
 
 const HomeScreen = ({ navigation, route }) => {
   return (
-      <SafeAreaView style={styles.background}>
-        <StatusBar
-        translucent={true}
-        backgroundColor={colors.fullyTranslucent} 
-        barStyle="dark-content"/>
-        <View style={globalStyles.topContainer}>
-          <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
-        </View>
-
-        <View style={styles.header}>
-
-          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-          
-          <View style={styles.gemsContainer}>
-            
-          </View>
-
-        </View>
-
-        <View style={globalStyles.cardContainer}>
-          <View style={globalStyles.card}>
-          </View>
-        </View>
+      <View style={styles.background}>
+        <CardHeading />
         
         <View style={styles.body}>
           <Text style={styles.bodyHeader}>Ready to start shopping?</Text>
           <Text style={styles.bodyText}>Searching for nearby stores...</Text>
           <Text style={styles.bodyHeader}>Daily deals near you</Text>
         </View>
-      </SafeAreaView> 
+      </View> 
   );
 };
 
@@ -94,7 +73,7 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 30,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignContent: "center",
@@ -121,39 +100,6 @@ const styles = StyleSheet.create({
     left: 20,
     width: 22,
     height: 18
-  },
-
-  gemsContainer: {
-    position: "absolute",
-    right: 20,
-    resizeMode: "contain",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-  },
-
-  gemsButton: {
-    flexDirection: "row",
-    height: 40,
-    backgroundColor: colors.gemButton,
-    borderRadius: 32,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingLeft: 12,
-    paddingRight: 14,
-  },
-
-  gemIcon: {
-    //left: 14,
-    width: 22,
-    height: 20
-  },
-
-  gemsText: {
-    color: colors.foreground,
-    fontSize: 16,
-    textAlign: 'center',
-    justifyContent: 'center',
-    fontFamily: "OpenSans-Bold",
   },
 
   container: {

@@ -13,29 +13,12 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
+import CardHeading from '../components/CardHeading';
 
 const CartScreen = ({ navigation, route }) => {
   return (
-    <SafeAreaView style={styles.background}>
-      <StatusBar
-        translucent={true}
-        backgroundColor={colors.fullyTranslucent} 
-        barStyle="dark-content"/>
-        
-      <View style={globalStyles.topContainer}>
-        <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
-      </View>
-      <View style={styles.header}>
-
-        <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-        <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-
-      </View>
-
-      <View style={globalStyles.cardContainer}>
-        <View style={globalStyles.card}>
-        </View>
-      </View>
+    <View style={styles.background}>
+      <CardHeading />
       
       <View style={styles.body}>
         <Text style={styles.text}>CART</Text>
@@ -49,7 +32,7 @@ const CartScreen = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView> 
+    </View> 
   );
 };
 
@@ -97,7 +80,7 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 30,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignContent: "center",

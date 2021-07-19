@@ -1,111 +1,91 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { 
-  View, 
   Text,
-  StyleSheet, 
-  Image,
+  View,
   TouchableOpacity,
-  SafeAreaView,
+  StyleSheet,
+  Image,
   ImageBackground,
   StatusBar,
-  Alert
+  Platform,
+  SafeAreaView
 } from 'react-native';
-import Video from 'react-native-video';
 
 import colors from '../config/colors';
-import globalStyles from '../config/styles';
-import CardHeading from '../components/CardHeading';
-import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
-const ScanScreen = ({ navigation, route }) => {
-  const [qrvalue, setQrvalue] = useState('');
 
-  const onBarcodeScan = (qrvalue) => {
-    // Called after the QRCode/Barcode is scanned
-    setQrvalue(qrvalue);
-    console.log(qrvalue)
-  };
-
+const CardHeading = () => {
   return (
-    <View style={styles.background}>
-      <CardHeading />
-
-      <View style={styles.scannerContainer}>
-        <View style={styles.scannerBorder}>
-          <Camera
-            style={styles.scanner}
-            hideControls={true} // (default false) optional, hides camera controls
-            showCapturedImageCount={false} // (default false) optional, show count for photos taken during that capture session
-            // Barcode props
-            scanBarcode={true}
-            cameraType={CameraType.Back}
-            onReadCode={(event) => onBarcodeScan(event.nativeEvent.codeStringValue)} // optional
-            showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
-          />
-          <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
-        </View>
-        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
+    <SafeAreaView>
+      <View style={styles.backgroundImage}>
+        <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
-    </View> 
+      <View style={styles.cardHeadingContainer}>
+      <StatusBar
+        translucent={true}
+        backgroundColor={colors.fullyTranslucent} 
+        barStyle="dark-content"/>
+
+      <SafeAreaView>
+        <View style={styles.header}>
+          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+        </View>
+      </SafeAreaView>
+
+      <View style={styles.cardContainer}>
+        <View style={styles.card} />
+      </View>
+    </View>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  scannerContainer: {
-    flex: 1,
-    paddingTop: 30,
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingBottom: 60,
+  cardHeadingContainer: {
   },
 
-  scanner: {
-    height: "100%",
-    width: "100%",
-    alignSelf: "center",
-  },
-
-  scannerBorder: {
-    height: "100%",
-    width: "100%",
-    alignSelf: "center",
-    borderWidth: 4,
-    borderRadius: 5,
-    borderColor: "#ebebeb"
-  },
-
-  scannerOverlay: {
+  backgroundImage: {
     position: "absolute",
-    //top: -50,
+    width: "100%",
+    height: Platform.OS === 'ios' ? 256 : 236,
+  },
+
+  header: {
+    marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+
+  cardContainer: {
+    height: 200,
+    paddingTop: 10,
+    paddingLeft: 24,
+    paddingRight: 24,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+  },
+
+  card: {
+    width: "100%",
     height: "100%",
-    width: "100%",
-    //alignSelf: "flex-start",
-    backgroundColor: colors.glass
-  },
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 32,
 
-  scannerTextHeader: {
-    width: "100%",
-    alignSelf: "center",
-    textAlign: "center",
-    paddingTop: 4,
-    fontSize: 24,
-    fontFamily: "OpenSans-SemiBold"
-  },
-
-  scannerTextBody: {
-    width: "100%",
-    alignSelf: "center",
-    textAlign: "center",
-    paddingTop: 4,
-    fontSize: 14,
-    fontFamily: "OpenSans-Regular"
-  },
-
-  itemAdded: {
-    width: "100%",
-    marginTop: 12,
-    height: 28,
-    resizeMode: "contain",
+    elevation: 1,
+    backgroundColor: "#ffffff",
+    //backgroundColor: "green",
   },
 
   image: {
@@ -132,13 +112,6 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  topContainer: {
-    position: "absolute",
-    width: "100%",
-    height: 297,
-    //backgroundColor: "#000000",
-  },
-
   bodyText: {
     color: colors.termsText,
     paddingLeft: 20,
@@ -148,13 +121,13 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  header: {
-    marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-    height: 40,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+  body: {
+    flex: 1,
+    paddingTop: 60,
+    flexDirection: "column",
+    justifyContent: "flex-start",
     alignContent: "center",
+    alignItems: "center",
   },
 
   logo: {
@@ -272,7 +245,6 @@ const styles = StyleSheet.create({
     width: 24,
     height: 18
   },
-
 })
 
-export default ScanScreen;
+export default CardHeading;
