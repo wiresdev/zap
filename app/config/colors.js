@@ -8,6 +8,6 @@ export default {
   termsText: "#777777",
   codeErrorText: "#444444",
   cardBackground: "#dddddd",
-  glass: "rgba(255, 255, 255, 0.5)",
+  glass: "rgba(255, 255, 255, 0.25)",
   fullyTranslucent: "rgba(255, 255, 255, 0.0)"
 };

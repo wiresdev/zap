@@ -56,6 +56,7 @@ const ScanScreen = ({ navigation, route }) => {
             onReadCode={(event) => Alert.alert('QR code found')} // optional
             showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
           />
+          <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
         </View>
         <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
@@ -80,6 +81,15 @@ const styles = StyleSheet.create({
     borderWidth: Platform.OS === 'ios' ? 2 : 4,
     borderRadius: 5,
     borderColor: "#ebebeb"
+  },
+
+  scannerOverlay: {
+    position: "absolute",
+    //top: -50,
+    height: "100%",
+    width: "100%",
+    //alignSelf: "flex-start",
+    backgroundColor: colors.glass
   },
 
   itemAdded: {
