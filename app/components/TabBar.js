@@ -7,9 +7,9 @@ import {
   Image, 
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CartScreen from './CartScreen';
-import HomeScreen from './HomeScreen';
-import ScanScreen from './ScanScreen';
+import CartScreen from '../screens/CartScreen';
+import HomeScreen from '../screens/HomeScreen';
+import ScanScreen from '../screens/ScanScreen';
 
 import colors from '../config/colors';
 

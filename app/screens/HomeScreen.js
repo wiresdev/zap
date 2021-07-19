@@ -14,7 +14,7 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
-import CardHeading from './CardHeading';
+import CardHeading from '../components/CardHeading';
 
 
 const HomeScreen = ({ navigation, route }) => {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 30,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignContent: "center",
@@ -100,39 +100,6 @@ const styles = StyleSheet.create({
     left: 20,
     width: 22,
     height: 18
-  },
-
-  gemsContainer: {
-    position: "absolute",
-    right: 20,
-    resizeMode: "contain",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-  },
-
-  gemsButton: {
-    flexDirection: "row",
-    height: 40,
-    backgroundColor: colors.gemButton,
-    borderRadius: 32,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingLeft: 12,
-    paddingRight: 14,
-  },
-
-  gemIcon: {
-    //left: 14,
-    width: 22,
-    height: 20
-  },
-
-  gemsText: {
-    color: colors.foreground,
-    fontSize: 16,
-    textAlign: 'center',
-    justifyContent: 'center',
-    fontFamily: "OpenSans-Bold",
   },
 
   container: {

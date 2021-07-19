@@ -8,7 +8,7 @@ import VerifyScreen from './app/screens/VerifyScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import ScanScreen from './app/screens/ScanScreen';
 import CartScreen from './app/screens/CartScreen';
-import TabBar from './app/screens/TabBar';
+import TabBar from './app/components/TabBar';
 
 const Stack = createStackNavigator();
 

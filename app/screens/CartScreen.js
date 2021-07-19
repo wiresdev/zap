@@ -13,7 +13,7 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
-import CardHeading from './CardHeading';
+import CardHeading from '../components/CardHeading';
 
 const CartScreen = ({ navigation, route }) => {
   return (
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 30,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignContent: "center",

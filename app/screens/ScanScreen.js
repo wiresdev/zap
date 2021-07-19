@@ -14,7 +14,7 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
-import CardHeading from './CardHeading';
+import CardHeading from '../components/CardHeading';
 import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
@@ -46,11 +46,10 @@ const ScanScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   scannerContainer: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 30,
     paddingLeft: 40,
     paddingRight: 40,
     paddingBottom: 60,
-    //backgroundColor: "green"
   },
 
   scanner: {

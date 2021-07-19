@@ -10,12 +10,7 @@ import {
   Platform,
   SafeAreaView
 } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CartScreen from './CartScreen';
-import HomeScreen from './HomeScreen';
-import ScanScreen from './ScanScreen';
 
-import globalStyles from '../config/styles';
 import colors from '../config/colors';
 
 
