@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
   View, 
   Text,
@@ -17,7 +17,14 @@ import globalStyles from '../config/styles';
 import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
-  
+  const [qrvalue, setQrvalue] = useState('');
+
+  const onBarcodeScan = (qrvalue) => {
+    // Called after the QRCode/Barcode is scanned
+    setQrvalue(qrvalue);
+    console.log(qrvalue)
+  };
+
   return (
     <SafeAreaView style={styles.background}>
       <StatusBar
@@ -50,7 +57,7 @@ const ScanScreen = ({ navigation, route }) => {
             // Barcode props
             scanBarcode={true}
             cameraType={CameraType.Back}
-            onReadCode={(event) => Alert.alert('QR code found')} // optional
+            onReadCode={(event) => onBarcodeScan(event.nativeEvent.codeStringValue)} // optional
             showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
