@@ -45,7 +45,7 @@ const ScanScreen = ({ navigation, route }) => {
       </View>
 
       <View style={styles.scannerContainer}>
-        <View style={styles.scanner}>
+        <View style={styles.scannerBorder}>
           <Camera
             style={styles.scanner}
             hideControls={true} // (default false) optional, hides camera controls
@@ -78,7 +78,13 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     alignSelf: "center",
-    borderWidth: Platform.OS === 'ios' ? 2 : 4,
+  },
+
+  scannerBorder: {
+    height: "100%",
+    width: "100%",
+    alignSelf: "center",
+    borderWidth: 4,
     borderRadius: 5,
     borderColor: "#ebebeb"
   },
