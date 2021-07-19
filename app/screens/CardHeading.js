@@ -1,43 +1,98 @@
 import React from 'react';
 import { 
-  View, 
   Text,
-  StyleSheet, 
-  Image,
+  View,
   TouchableOpacity,
-  SafeAreaView,
+  StyleSheet,
+  Image,
   ImageBackground,
-  StatusBar
+  StatusBar,
+  Platform,
+  SafeAreaView
 } from 'react-native';
-import Video from 'react-native-video';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CartScreen from './CartScreen';
+import HomeScreen from './HomeScreen';
+import ScanScreen from './ScanScreen';
 
-import colors from '../config/colors';
 import globalStyles from '../config/styles';
-import CardHeading from './CardHeading';
+import colors from '../config/colors';
 
-const CartScreen = ({ navigation, route }) => {
+
+const CardHeading = () => {
   return (
-    <View style={styles.background}>
-      <CardHeading />
-      
-      <View style={styles.body}>
-        <Text style={styles.text}>CART</Text>
-
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => navigation.navigate('PhoneVerify')}
-          >
-            <Image style={styles.leftArrow} source={require('../assets/icons/left-arrow-black.png')}/>
-          </TouchableOpacity>
-        </View>
+    <SafeAreaView>
+      <View style={styles.backgroundImage}>
+        <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
       </View>
-    </View> 
-  );
-};
+      <View style={styles.cardHeadingContainer}>
+      <StatusBar
+        translucent={true}
+        backgroundColor={colors.fullyTranslucent} 
+        barStyle="dark-content"/>
 
+      <SafeAreaView>
+        <View style={styles.header}>
+          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
+        </View>
+      </SafeAreaView>
+
+      <View style={styles.cardContainer}>
+        <View style={styles.card} />
+      </View>
+    </View>
+    </SafeAreaView>
+  );
+}
 
 const styles = StyleSheet.create({
+  cardHeadingContainer: {
+  },
+
+  backgroundImage: {
+    position: "absolute",
+    width: "100%",
+    height: Platform.OS === 'ios' ? 256 : 236,
+  },
+
+  header: {
+    marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+
+  cardContainer: {
+    height: 200,
+    paddingTop: 10,
+    paddingLeft: 24,
+    paddingRight: 24,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+  },
+
+  card: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 32,
+
+    elevation: 1,
+    backgroundColor: "#ffffff",
+    //backgroundColor: "green",
+  },
+
   image: {
     flex: 1,
     justifyContent: "center"
@@ -62,13 +117,6 @@ const styles = StyleSheet.create({
     fontFamily: "OpenSans-Regular",
   },
 
-  topContainer: {
-    position: "absolute",
-    width: "100%",
-    height: 297,
-    //backgroundColor: "#000000",
-  },
-
   bodyText: {
     color: colors.termsText,
     paddingLeft: 20,
@@ -85,15 +133,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignContent: "center",
     alignItems: "center",
-  },
-
-  header: {
-    marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-    height: 40,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    alignContent: "center",
   },
 
   logo: {
@@ -211,7 +250,6 @@ const styles = StyleSheet.create({
     width: 24,
     height: 18
   },
-
 })
 
-export default CartScreen;
+export default CardHeading;

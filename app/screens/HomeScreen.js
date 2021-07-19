@@ -14,41 +14,20 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
+import CardHeading from './CardHeading';
 
 
 const HomeScreen = ({ navigation, route }) => {
   return (
-      <SafeAreaView style={styles.background}>
-        <StatusBar
-        translucent={true}
-        backgroundColor={colors.fullyTranslucent} 
-        barStyle="dark-content"/>
-        <View style={globalStyles.topContainer}>
-          <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
-        </View>
-
-        <View style={styles.header}>
-
-          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-          <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-          
-          <View style={styles.gemsContainer}>
-            
-          </View>
-
-        </View>
-
-        <View style={globalStyles.cardContainer}>
-          <View style={globalStyles.card}>
-          </View>
-        </View>
+      <View style={styles.background}>
+        <CardHeading />
         
         <View style={styles.body}>
           <Text style={styles.bodyHeader}>Ready to start shopping?</Text>
           <Text style={styles.bodyText}>Searching for nearby stores...</Text>
           <Text style={styles.bodyHeader}>Daily deals near you</Text>
         </View>
-      </SafeAreaView> 
+      </View> 
   );
 };
 

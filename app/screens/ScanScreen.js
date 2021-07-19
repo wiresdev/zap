@@ -14,32 +14,14 @@ import Video from 'react-native-video';
 
 import colors from '../config/colors';
 import globalStyles from '../config/styles';
+import CardHeading from './CardHeading';
 import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
   
   return (
-    <SafeAreaView style={styles.background}>
-      <StatusBar
-        translucent={true}
-        backgroundColor={colors.fullyTranslucent} 
-        barStyle="dark-content"/>
-
-      <View style={globalStyles.topContainer}>
-        <ImageBackground source={require('../assets/images/gradient.png')} resizeMode="cover" style={styles.image}></ImageBackground>
-      </View>
-
-      <View style={styles.header}>
-
-        <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-        <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-
-      </View>
-
-      <View style={globalStyles.cardContainer}>
-        <View style={globalStyles.card}>
-        </View>
-      </View>
+    <View style={styles.background}>
+      <CardHeading />
 
       <View style={styles.scannerContainer}>
         <View style={styles.scannerBorder}>
@@ -57,7 +39,7 @@ const ScanScreen = ({ navigation, route }) => {
         </View>
         <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
-    </SafeAreaView> 
+    </View> 
   );
 };
 
