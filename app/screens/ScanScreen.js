@@ -56,8 +56,6 @@ const ScanScreen = ({ navigation, route }) => {
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
         </View>
-        <Text style={styles.scannerTextHeader}>Scan an item.</Text>
-        <Text style={styles.scannerTextBody}>Position the barcode within the frame to add the item to your cart.</Text>
       </View>
     </SafeAreaView> 
   );
@@ -66,10 +64,10 @@ const ScanScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   scannerContainer: {
     flex: 1,
-    paddingTop: 40,
+    paddingTop: 50,
     paddingLeft: 40,
     paddingRight: 40,
-    paddingBottom: 90,
+    paddingBottom: 30,
     //backgroundColor: "green"
   },
 
@@ -119,7 +117,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     alignSelf: "center",
-    top: 60,
+    top: 70,
     zIndex: 1,
     height: 24,
     resizeMode: "contain",
