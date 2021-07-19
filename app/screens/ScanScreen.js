@@ -66,7 +66,7 @@ const ScanScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   scannerContainer: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 40,
     paddingLeft: 40,
     paddingRight: 40,
     paddingBottom: 90,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     alignSelf: "center",
-    top: 70,
+    top: 60,
     zIndex: 1,
     height: 24,
     resizeMode: "contain",
