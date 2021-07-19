@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ImageBackground,
-  StatusBar
+  StatusBar,
+  Alert
 } from 'react-native';
 import Video from 'react-native-video';
 
@@ -32,10 +33,6 @@ const ScanScreen = ({ navigation, route }) => {
 
         <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
         <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
-        
-        <View style={styles.gemsContainer}>
-          
-        </View>
 
       </View>
 
@@ -45,6 +42,7 @@ const ScanScreen = ({ navigation, route }) => {
       </View>
 
       <View style={styles.scannerContainer}>
+        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
         <View style={styles.scannerBorder}>
           <Camera
             style={styles.scanner}
@@ -58,7 +56,8 @@ const ScanScreen = ({ navigation, route }) => {
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
         </View>
-        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
+        <Text style={styles.scannerTextHeader}>Scan an item.</Text>
+        <Text style={styles.scannerTextBody}>Position the barcode within the frame to add the item to your cart.</Text>
       </View>
     </SafeAreaView> 
   );
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingLeft: 40,
     paddingRight: 40,
-    paddingBottom: 80,
+    paddingBottom: 90,
     //backgroundColor: "green"
   },
 
@@ -98,10 +97,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.glass
   },
 
-  itemAdded: {
+  scannerTextHeader: {
     width: "100%",
-    marginTop: 20,
-    height: 20,
+    alignSelf: "center",
+    textAlign: "center",
+    paddingTop: 4,
+    fontSize: 24,
+    fontFamily: "OpenSans-SemiBold"
+  },
+
+  scannerTextBody: {
+    width: "100%",
+    alignSelf: "center",
+    textAlign: "center",
+    paddingTop: 4,
+    fontSize: 14,
+    fontFamily: "OpenSans-Regular"
+  },
+
+  itemAdded: {
+    position: "absolute",
+    width: "100%",
+    alignSelf: "center",
+    top: 70,
+    zIndex: 1,
+    height: 24,
     resizeMode: "contain",
   },
 
