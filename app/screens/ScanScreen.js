@@ -23,9 +23,10 @@ const ScanScreen = ({ navigation, route }) => {
   const onBarcodeScan = (qrvalue) => {
     // Called after the QRCode/Barcode is scanned
     setQrvalue(qrvalue);
-    console.log(qrvalue)
+    console.log(qrvalue);
+    return <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>;
   };
-
+  
   return (
     <View style={styles.background}>
       <CardHeading />
@@ -44,7 +45,6 @@ const ScanScreen = ({ navigation, route }) => {
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
         </View>
-        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
     </View> 
   );
