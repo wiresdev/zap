@@ -25,7 +25,8 @@ const ScanScreen = ({ navigation, route }) => {
     // Called after the QRCode/Barcode is scanned
     setQrvalue(qrvalue);
     console.log(qrvalue);
-    setshouldShow(shouldShow);
+    setshouldShow(!shouldShow);
+    setTimeout(() => {  console.log("World!"); }, 10000);
   };
   
   return (
