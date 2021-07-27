@@ -35,11 +35,14 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="PhoneVerify" component={VerifyScreen} />
-        <Stack.Screen name="Home" component={DrawerHome}>
-        </Stack.Screen>
+        <Stack.Screen name="Welcome" component={WelcomeScreen}
+          options={{gestureEnabled: false}}/>
+        <Stack.Screen name="Login" component={LoginScreen} 
+          options={{gestureEnabled: false}}/>
+        <Stack.Screen name="PhoneVerify" component={VerifyScreen} 
+          options={{gestureEnabled: false}}/>
+        <Stack.Screen name="Home" component={DrawerHome}
+          options={{gestureEnabled: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

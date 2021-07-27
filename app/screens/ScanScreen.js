@@ -22,7 +22,6 @@ const ScanScreen = ({ navigation, route }) => {
   const [shouldShow, setshouldShow] = useState(false);
 
   const onBarcodeScan = (qrvalue) => {
-    // Called after the QRCode/Barcode is scanned
     setQrvalue(qrvalue);
     console.log(qrvalue);
     setshouldShow(!shouldShow);
@@ -83,11 +82,8 @@ const styles = StyleSheet.create({
 
   scannerOverlay: {
     position: "absolute",
-    //top: -50,
     height: "100%",
     width: "100%",
-    //alignSelf: "flex-start",
-    //backgroundColor: colors.glass
   },
 
   scannerTextHeader: {
