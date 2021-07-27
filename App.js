@@ -13,7 +13,7 @@ import TabBar from './app/components/TabBar';
 
 const Stack = createStackNavigator();
 
-function TabHome({navigation}) {
+function TabHome() {
   return (
     <TabBar />
   );
@@ -21,7 +21,7 @@ function TabHome({navigation}) {
 
 const Drawer = createDrawerNavigator();
 
-function DrawerHome({navigation}) {
+function DrawerHome() {
   return (
     <Drawer.Navigator initialRouteName="DrawerHome">
       <Drawer.Screen name="Test" component={TabHome} />
