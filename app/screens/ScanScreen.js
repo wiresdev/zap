@@ -19,13 +19,16 @@ import { Camera, CameraScreen, CameraType } from 'react-native-camera-kit';
 
 const ScanScreen = ({ navigation, route }) => {
   const [qrvalue, setQrvalue] = useState('');
+  const [shouldShow, setshouldShow] = useState(false);
 
   const onBarcodeScan = (qrvalue) => {
     // Called after the QRCode/Barcode is scanned
     setQrvalue(qrvalue);
-    console.log(qrvalue)
+    console.log(qrvalue);
+    setshouldShow(!shouldShow);
+    setTimeout(() => {  console.log("World!"); }, 10000);
   };
-
+  
   return (
     <View style={styles.background}>
       <CardHeading navigation={navigation}/>
@@ -43,8 +46,12 @@ const ScanScreen = ({ navigation, route }) => {
             showFrame={false} // (default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
           />
           <Image style={styles.scannerOverlay} source={require('../assets/images/scanner-overlay.png')}/>
+          {
+            shouldShow ? (
+              <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
+            ) : null
+          }
         </View>
-        <Image style={styles.itemAdded} source={require('../assets/icons/item-added.png')}/>
       </View>
     </View> 
   );
@@ -79,9 +86,8 @@ const styles = StyleSheet.create({
     //top: -50,
     height: "100%",
     width: "100%",
-    resizeMode: "contain",
     //alignSelf: "flex-start",
-    //backgroundColor: colors.glass
+    backgroundColor: colors.glass
   },
 
   scannerTextHeader: {
