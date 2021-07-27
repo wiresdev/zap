@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     //alignSelf: "flex-start",
-    backgroundColor: colors.glass
+    //backgroundColor: colors.glass
   },
 
   scannerTextHeader: {

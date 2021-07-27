@@ -29,12 +29,11 @@ const CardHeading = ({navigation}) => {
 
       <SafeAreaView>
         <View style={styles.header}>
-          <Pressable 
+          <TouchableOpacity 
           style={styles.sandwhichMenuContainer}
-          onPress={() => navigation.toggleDrawer()}
-          hitSlop={10}>
+          onPress={() => navigation.toggleDrawer()}>
             <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
-          </Pressable>
+          </TouchableOpacity>
           <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
         </View>
       </SafeAreaView>

@@ -24,7 +24,9 @@ const Drawer = createDrawerNavigator();
 function DrawerHome() {
   return (
     <Drawer.Navigator initialRouteName="DrawerHome">
-      <Drawer.Screen name="Test" component={TabHome} />
+      <Drawer.Screen name="Your Receipts" component={TabHome} />
+      <Drawer.Screen name="Help & Tutorial" component={TabHome} />
+      <Drawer.Screen name="Settings" component={TabHome} />
     </Drawer.Navigator>
   );
 }
