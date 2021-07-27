@@ -18,7 +18,7 @@ import CardHeading from '../components/CardHeading';
 const CartScreen = ({ navigation, route }) => {
   return (
     <View style={styles.background}>
-      <CardHeading />
+      <CardHeading navigation={navigation}/>
       
       <View style={styles.body}>
         <Text style={styles.text}>CART</Text>

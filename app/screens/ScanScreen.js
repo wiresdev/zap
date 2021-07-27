@@ -28,7 +28,7 @@ const ScanScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.background}>
-      <CardHeading />
+      <CardHeading navigation={navigation}/>
 
       <View style={styles.scannerContainer}>
         <View style={styles.scannerBorder}>

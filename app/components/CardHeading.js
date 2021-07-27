@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { 
   Text,
   View,
@@ -8,13 +9,13 @@ import {
   ImageBackground,
   StatusBar,
   Platform,
-  SafeAreaView
+  SafeAreaView,
+  Pressable
 } from 'react-native';
 
 import colors from '../config/colors';
 
-
-const CardHeading = () => {
+const CardHeading = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.backgroundImage}>
@@ -28,7 +29,12 @@ const CardHeading = () => {
 
       <SafeAreaView>
         <View style={styles.header}>
-          <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+          <Pressable 
+          style={styles.sandwhichMenuContainer}
+          onPress={() => navigation.toggleDrawer()}
+          hitSlop={10}>
+            <Image style={styles.sandwhichMenu} source={require('../assets/icons/menu.png')}/>
+          </Pressable>
           <Image style={styles.logo} source={require('../assets/icons/lightning-black.png')}/>
         </View>
       </SafeAreaView>
@@ -136,9 +142,15 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
 
-  sandwhichMenu: {
+  sandwhichMenuContainer: {
     position: "absolute",
     left: 20,
+    backgroundColor: "green",
+    margin: 10,
+    zIndex: 1
+  },
+
+  sandwhichMenu: {
     width: 22,
     height: 18
   },

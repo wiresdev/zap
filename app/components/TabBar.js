@@ -15,7 +15,7 @@ import colors from '../config/colors';
 
 const Tab = createBottomTabNavigator();
 
-const TabBar = () => {
+const TabBar = ({ navigation}) => {
   return (
     <Tab.Navigator
       tabBarOptions={{

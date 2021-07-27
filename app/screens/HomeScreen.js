@@ -17,10 +17,10 @@ import globalStyles from '../config/styles';
 import CardHeading from '../components/CardHeading';
 
 
-const HomeScreen = ({ navigation, route }) => {
+const HomeScreen = ({navigation}) => {
   return (
       <View style={styles.background}>
-        <CardHeading />
+        <CardHeading navigation={navigation}/>
         
         <View style={styles.body}>
           <Text style={styles.bodyHeader}>Ready to start shopping?</Text>
