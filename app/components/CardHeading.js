@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
   sandwhichMenuContainer: {
     position: "absolute",
     left: 20,
-    backgroundColor: "green",
     margin: 10,
     zIndex: 1
   },
